@@ -1,0 +1,11 @@
+# Identifier for the status LED light by the side of the device.
+int32 led_index
+# First color value to be set on the status LED.
+string color1
+# Second color value to be set on the status LED.
+string color2
+# Time in seconds to hold each color for the blink effect.
+float32 delay
+---
+# Error flag indicating successful/failed service call.
+int32 error

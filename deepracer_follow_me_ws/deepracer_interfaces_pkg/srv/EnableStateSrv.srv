@@ -1,0 +1,5 @@
+# Activate/Deactivate the current mode(manual, automatic, calibration).
+bool is_active
+---
+# Error flag indicating successful/failed service call.
+int32 error

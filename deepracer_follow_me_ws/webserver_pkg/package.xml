@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>webserver_pkg</name>
+  <version>0.0.1</version>
+  <description>
+    This package contains webserver publisher that acts as a main node with a collection of
+    Flask backend APIs communicating with the ROS services. It provides all the functionalities
+    required by the AWS DeepRacer device console.
+  </description>
+  <maintainer email="aws-deepracer@amazon.com">AWS DeepRacer</maintainer>
+  <license>Apache 2.0</license>
+
+  <depend>rclpy</depend>
+  <depend>deepracer_interfaces_pkg</depend>
+  <depend>ctrl_pkg</depend>
+  <depend>sensor_fusion_pkg</depend>
+  <depend>deepracer_systems_pkg</depend>
+  <depend>device_info_pkg</depend>
+  <depend>i2c_pkg</depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

@@ -1,0 +1,3 @@
+---
+# Current vehicle battery level information.
+int32 level
