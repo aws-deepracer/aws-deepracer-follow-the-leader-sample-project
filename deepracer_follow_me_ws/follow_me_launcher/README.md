@@ -300,4 +300,4 @@ Applies to the object_detection_node
 | Parameter Name   | Description  |
 | ---------------- |  ----------- |
 |DEVICE (optional) | If set as MYRIAD, will use the Intel Compute Stick 2 for inference. Else uses CPU for inference by default, even if removed. |
-| PUBLISH_DISPLAY_OUTPUT | Set to True/False if the inference output images need to be published to localhost using web_video_server|
+| PUBLISH_DISPLAY_OUTPUT | Set to True/False if the inference output images need to be published to localhost using web_video_server. |
