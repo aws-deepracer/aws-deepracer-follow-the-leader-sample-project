@@ -131,14 +131,14 @@ The ctrl_node provides the core functionality to manage the different modes of o
 
 | Service Name | Service Type | Description |
 |--------------| ------------ | ----------- |
-| /model_optimizer_pkg/model_optimizer_server | ModelOptimizeSrv | Client to the model optimizer service that is called to trigger the model optimizing script for the current model selected in autonomous mode |
-| /inference_pkg/load_model | LoadModelSrv | Client to the load model service from the inference package that is called to set the preprocessing and inference task details in autonomous mode |
-| /inference_pkg/inference_state | InferenceStateSrv | Client to service that is called to enable/disable inference function on the stream of sensor messages in autonomous mode |
+| /model_optimizer_pkg/model_optimizer_server | ModelOptimizeSrv | Client to the model optimizer service that is called to trigger the model optimizing script for the current model selected in autonomous mode. |
+| /inference_pkg/load_model | LoadModelSrv | Client to the load model service from the inference package that is called to set the preprocessing and inference task details in autonomous mode. |
+| /inference_pkg/inference_state | InferenceStateSrv | Client to service that is called to enable/disable inference function on the stream of sensor messages in autonomous mode. |
 | /servo_pkg/servo_gpio | ServoGPIOSrv | Client ot service that is called to enable/disable the servo GPIO to allow setting the PWM values on the servo and motor. |
-| /servo_pkg/set_calibration | SetCalibrationSrv | Client to set the calibration value for the steering or throttle in calibration mode |
-| /servo_pkg/get_calibration | GetCalibrationSrv | Client to get the current calibration value for the steering or throttle in calibration mode |
-| /servo_pkg/get_led_state | GetLedCtrlSrv | Client to get car led service to get the tail light LED channel PWM values in calibration mode |
-| /servo_pkg/set_led_state | SetLedCtrlSrv | Client to set car led service to set the tail light LED channel PWM values in calibration mode |
+| /servo_pkg/set_calibration | SetCalibrationSrv | Client to set the calibration value for the steering or throttle in calibration mode. |
+| /servo_pkg/get_calibration | GetCalibrationSrv | Client to get the current calibration value for the steering or throttle in calibration mode. |
+| /servo_pkg/get_led_state | GetLedCtrlSrv | Client to get car led service to get the tail light LED channel PWM values in calibration mode. |
+| /servo_pkg/set_led_state | SetLedCtrlSrv | Client to set car led service to set the tail light LED channel PWM values in calibration mode. |
 | /deepracer_navigation_pkg/navigation_throttle | NavThrottleSrv | Client to service that is called set the scale value for the navigation throttle in autonomous mode to control the speed of the device. |
 | /deepracer_navigation_pkg/load_action_space | LoadModelSrv | Client to load action space service that is called to set the action space for the model in deepracer_navigation_node to be used while mapping the inference results to the action values in autonomous mode. |
 
@@ -149,10 +149,10 @@ The ctrl_node provides the core functionality to manage the different modes of o
 |--------------| ------------ | ----------- |
 | vehicle_state | ActiveStateSrv | Service that is called to set the vehicle mode by deactivating the current vehicle state and set the new mode. |
 | enable_state | EnableStateSrv | Service that is called to activate and deactivate the current vehicle mode. |
-| get_car_cal | GetCalibrationSrv | Service that is called to get the current calibration PWM values [min, mid, max, polarity] for the steering or throttle |
-| set_car_cal | SetLedCtrlSrv | Service that is called to set the calibration PWM values  [min, mid, max, polarity] for the steering or throttle |
-| get_car_led | GetLedCtrlSrv | Service that is called to get the tail light LED [red, green, blue] channel PWM values |
-| get_ctrl_modes | GetCtrlModesSrv | Service that is called to get the available modes of operation for vehicle |
+| get_car_cal | GetCalibrationSrv | Service that is called to get the current calibration PWM values [min, mid, max, polarity] for the steering or throttle. |
+| set_car_cal | SetLedCtrlSrv | Service that is called to set the calibration PWM values  [min, mid, max, polarity] for the steering or throttle. |
+| get_car_led | GetLedCtrlSrv | Service that is called to get the tail light LED [red, green, blue] channel PWM values. |
+| get_ctrl_modes | GetCtrlModesSrv | Service that is called to get the available modes of operation for vehicle. |
 | model_state | ModelStateSrv | Service that is called to execute the load model services in background thread. |
-| autonomous_throttle | NavThrottleSrv | Service that is called to set the scale value to multiply to the throttle during autonomous navigation |
-| is_model_loading | GetModelLoadingStatusSrv | Service that is called to know if there is load model operation going on right now on the device in autonomous mode |
+| autonomous_throttle | NavThrottleSrv | Service that is called to set the scale value to multiply to the throttle during autonomous navigation. |
+| is_model_loading | GetModelLoadingStatusSrv | Service that is called to know if there is load model operation going on right now on the device in autonomous mode. |
