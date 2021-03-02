@@ -4,7 +4,7 @@
 
 The DeepRacer Control ROS package creates the *ctrl_node* which is part of the Follow Me sample project and will be launched from the follow_me_launcher. This package was extended and modified from the DeepRacer Control ROS package developed for the core application. For more information about the Follow Me sample project, see [Follow Me sample project](https://github.com/aws-racer/aws-deepracer-follow-me-sample-project).
 
-This is a main node with services exposed to be used by webserver backend API calls. This node in the AWS DeepRacer application manages the different mode of the device [manual, autonomous, calibration]. It allows us to maintain the device in a single mode at any point of time so that the overlapping functionalities (like servo messages, etc) are not conflicting each other. In this package, an additional mode **followme** has been added to support the Follow Me sample project.
+This is the main node with services exposed to be used by webserver backend API calls. This node in the AWS DeepRacer application manages the different mode of the device [manual, autonomous, calibration]. It allows us to maintain the device in a single mode at any point of time so that the overlapping functionalities (like servo messages, etc) are not conflicting each other. In this package, an additional mode **followme** has been added to support the Follow Me sample project.
 
 ## License
 

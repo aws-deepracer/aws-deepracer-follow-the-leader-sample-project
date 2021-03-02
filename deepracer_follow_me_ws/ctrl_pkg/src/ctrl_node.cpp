@@ -197,7 +197,7 @@ namespace SysCtrl {
                 res->error = 0;
             }
             else {
-                res->error = 1;
+                RCLCPP_ERROR(this->get_logger(), "Result pointer not validated");
             }
         }
 
