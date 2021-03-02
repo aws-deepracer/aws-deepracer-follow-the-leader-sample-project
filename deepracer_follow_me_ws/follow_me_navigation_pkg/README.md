@@ -105,17 +105,17 @@ A launch file called follow_me_navigation_pkg_launch.py is included in this pack
 
 | Topic Name | Message Type | Description |
 |----------- | ------------ | ----------- |
-| /object_detection_pkg/object_detection_delta | ObjectDetectionDeltaMsg | Message with Object Detection normalized error (delta) of the detected object from the target (reference) position with respect to x and y axes. |
+|/object_detection_pkg/object_detection_delta|ObjectDetectionDeltaMsg|Message with Object Detection normalized error (delta) of the detected object from the target (reference) position with respect to x and y axes.|
 
 #### Published Topics
 
 | Topic Name | Message Type | Description |
-|----------- | ------------ | ----------- |
-| follow_me_drive | ServoCtrlMsg | This message is used to send motor throttle and servo steering angle ratios with respect to the device calibration. It can also be used to send raw PWM values for angle and throttle. |
+| ---------- | ------------ | ----------- |
+|follow_me_drive|ServoCtrlMsg|This message is used to send motor throttle and servo steering angle ratios with respect to the device calibration. It can also be used to send raw PWM values for angle and throttle.|
 
 #### Services
 
-| Service Name | Type | Description |
-|------------- | -----| ----------- |
-| set_max_speed | SetFollowMeMaxSpeedSrv | Sets Max Speed Percentage Scale for Follow Me Application |
+| Service Name | Service Type | Description |
+| ---------- | ------------ | ----------- |
+|set_max_speed|SetFollowMeMaxSpeedSrv|Sets Max Speed Percentage Scale for Follow Me Application.|
 
