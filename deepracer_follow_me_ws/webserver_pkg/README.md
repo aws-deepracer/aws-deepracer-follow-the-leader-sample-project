@@ -109,7 +109,7 @@ The webserver_publisher_node provides the core functionality to launch the FLASK
 
 | Topic Name | Message Type | Description |
 |----------- | ------------ | ----------- |
-| /deepracer_systems_pkg/software_update_pct | SoftwareUpdatePctMsg | Message with the latest software update percentage and status |
+| /deepracer_systems_pkg/software_update_pct | SoftwareUpdatePctMsg | Message with the latest software update percentage and status. |
 
 
 #### Published Topics
@@ -124,24 +124,24 @@ The webserver_publisher_node provides the core functionality to launch the FLASK
 
 | Service Name | Service Type | Description |
 |--------------| ------------ | ----------- |
-| /ctrl_pkg/vehicle_state | ActiveStateSrv | Client to the vehicle state service to deactivate the current vehicle state and prepare the new mode |
+| /ctrl_pkg/vehicle_state | ActiveStateSrv | Client to the vehicle state service to deactivate the current vehicle state and prepare the new mode. |
 | /ctrl_pkg/enable_state | EnableStateSrv | Client to the enable state service to activate and deactivate the current vehicle mode. |
-| /ctrl_pkg/get_car_cal | GetCalibrationSrv | Client to the get calibration service to get the current calibration value for the steering or throttle |
-| /ctrl_pkg/set_car_cal | SetCalibrationSrv | Client to the set calibration service to set the current calibration value for the steering or throttle |
+| /ctrl_pkg/get_car_cal | GetCalibrationSrv | Client to the get calibration service to get the current calibration value for the steering or throttle. |
+| /ctrl_pkg/set_car_cal | SetCalibrationSrv | Client to the set calibration service to set the current calibration value for the steering or throttle. |
 | /device_info_pkg/get_device_info | GetDeviceInfoSrv | Client to the get device info service to get the hardware and software version of DeepRacer device and packages. |
-| /i2c_pkg/battery_level | BatteryLevelSrv | Client to the battery level service to get the current vehicle battery level ranging from [0 to 11] |
+| /i2c_pkg/battery_level | BatteryLevelSrv | Client to the battery level service to get the current vehicle battery level ranging from [0 to 11]. |
 | /sensor_fusion_pkg/sensor_data_status | SensorStatusCheckSrv | Client to the sensor data status service to get the sensor connection status for single camera/stereo camera and LiDAR. |
-| /ctrl_pkg/set_car_led | SetLedCtrlSrv | Client to set car led service to set the tail light LED values |
-| /ctrl_pkg/get_car_led | GetLedCtrlSrv | Client to get car led service to get the tail light LED values |
-| /ctrl_pkg/get_ctrl_modes | GetCtrlModesSrv | Client to get the available modes of operation for vehicle |
-| /deepracer_systems_pkg/verify_model_ready | VerifyModelReadySrv | Client to verify model service to validate if the extraction and installation of the model was successful |
-| /sensor_fusion_pkg/configure_lidar | LidarConfigSrv | Client to configure lidar service to dynamically configure the preprocessing details for the LiDAR data before publishing as part of sensor message |
+| /ctrl_pkg/set_car_led | SetLedCtrlSrv | Client to set car led service to set the tail light LED values. |
+| /ctrl_pkg/get_car_led | GetLedCtrlSrv | Client to get car led service to get the tail light LED values. |
+| /ctrl_pkg/get_ctrl_modes | GetCtrlModesSrv | Client to get the available modes of operation for vehicle. |
+| /deepracer_systems_pkg/verify_model_ready | VerifyModelReadySrv | Client to verify model service to validate if the extraction and installation of the model was successful. |
+| /sensor_fusion_pkg/configure_lidar | LidarConfigSrv | Client to configure lidar service to dynamically configure the preprocessing details for the LiDAR data before publishing as part of sensor message. |
 | /ctrl_pkg/model_state | ModelStateSrv | Client to model state service to execute the load model services in background thread. |
-| /ctrl_pkg/is_model_loading | GetModelLoadingStatusSrv | Client to is model loading service to know if there is load model operation going on right now on the device |
-| /deepracer_systems_pkg/console_model_action | ConsoleModelActionSrv | Client to the get otg link state service to get the current connection status of micro-USB cable to the DeepRacer device |
-| /deepracer_systems_pkg/software_update_check | SoftwareUpdateCheckSrv | Client to the software update check service to find out if there is a software update available for the aws-deepracer packages |
-| /deepracer_systems_pkg/begin_update | BeginSoftwareUpdateSrv | Client to the begin update service to trigger the update of the aws-deepracer debian packages to the latest software version available |
-| /deepracer_systems_pkg/software_update_state | SoftwareUpdateStateSrv | Client to software update state service to get the current software update state from the states [ UPDATE_UNKNOWN, UP_TO_DATE, UPDATE_AVAILABLE, UPDATE_PENDING, UPDATE_IN_PROGRESS ] |
-| /ctrl_pkg/autonomous_throttle | NavThrottleSrv | Client to autonomous throttle service to set the scale value to multiply to the throttle during autonomous navigation |
+| /ctrl_pkg/is_model_loading | GetModelLoadingStatusSrv | Client to is model loading service to know if there is load model operation going on right now on the device. |
+| /deepracer_systems_pkg/console_model_action | ConsoleModelActionSrv | Client to the get otg link state service to get the current connection status of micro-USB cable to the DeepRacer device. |
+| /deepracer_systems_pkg/software_update_check | SoftwareUpdateCheckSrv | Client to the software update check service to find out if there is a software update available for the aws-deepracer packages. |
+| /deepracer_systems_pkg/begin_update | BeginSoftwareUpdateSrv | Client to the begin update service to trigger the update of the aws-deepracer debian packages to the latest software version available. |
+| /deepracer_systems_pkg/software_update_state | SoftwareUpdateStateSrv | Client to software update state service to get the current software update state from the states [ UPDATE_UNKNOWN, UP_TO_DATE, UPDATE_AVAILABLE, UPDATE_PENDING, UPDATE_IN_PROGRESS ]. |
+| /ctrl_pkg/autonomous_throttle | NavThrottleSrv | Client to autonomous throttle service to set the scale value to multiply to the throttle during autonomous navigation. |
 | /follow_me_navigation_pkg/set_max_speed | SetFollowMeMaxSpeedSrv | Client to set follow me max speed percentage scale value during follow me navigation |
-| /deepracer_systems_pkg/get_otg_link_state | OTGLinkStateSrv | Client to the get otg link state service to get the current connection status of micro-USB cable to the DeepRacer device |
+| /deepracer_systems_pkg/get_otg_link_state | OTGLinkStateSrv | Client to the get otg link state service to get the current connection status of micro-USB cable to the DeepRacer device. |
