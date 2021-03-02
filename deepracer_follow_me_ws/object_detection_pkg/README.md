@@ -125,7 +125,7 @@ A launch file called object_detection_pkg_launch.py is included in this package 
 | Parameter Name   | Description  |
 | ---------------- |  ----------- |
 | DEVICE (optional) | If set as MYRIAD, will use the Intel Compute Stick 2 for inference. Else uses CPU for inference by default, even if removed. |
-| PUBLISH_DISPLAY_OUTPUT | Set to True/False if the inference output images need to be published to localhost using web_video_server|
+| PUBLISH_DISPLAY_OUTPUT | Set to True/False if the inference output images need to be published to localhost using web_video_server.|
 
 
 ## Node Details
@@ -144,4 +144,4 @@ A launch file called object_detection_pkg_launch.py is included in this package 
 | Topic Name | Message Type | Description |
 |----------- | ------------ | ----------- |
 | object_detection_delta | ObjectDetectionDeltaMsg | Message with Object Detection normalized error (delta) of the detected object from the target (reference) position with respect to x and y axes. |
-| detection_display | Image | Message to display the input stream of images after inference, published to the local web_video_server |
+| detection_display | Image | Message to display the input stream of images after inference, published to the local web_video_server. |
