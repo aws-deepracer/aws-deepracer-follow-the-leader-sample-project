@@ -35,6 +35,10 @@ The following are the additional software and hardware requirements to get the F
 
 Open up a terminal on the DeepRacer device and run the following commands as root user.
 
+1. Stop the deepracer-core.service that is currently running on the device:
+
+        systemctl stop deepracer-core
+
 1. Source the ROS2 Foxy setup bash script:
 
         source /opt/ros/foxy/setup.bash 
@@ -60,8 +64,7 @@ Open up a terminal on the DeepRacer device and run the following commands as roo
 
 1. Resolve the dependencies:
 
-        cd ~/deepracer_ws/aws-deepracer-follow-me-sample-project/deepracer_follow_me_ws/ && apt-get update
-        rosdep install -i --from-path . --rosdistro foxy -y
+        cd ~/deepracer_ws/aws-deepracer-follow-me-sample-project/deepracer_follow_me_ws/ && rosdep install -i --from-path . --rosdistro foxy -y
 
 1. Build the packages in the workspace
 
@@ -74,13 +77,21 @@ Open up a terminal on the DeepRacer device and run the following commands as roo
 
 To launch the Follow Me sample application as root user on the AWS DeepRacer device open up another terminal on the device and run the following commands as root user:
 
-1. Navigate to the Follow Me workspace:
+1. Source the ROS2 Foxy setup bash script:
 
-        cd ~/deepracer_ws/aws-deepracer-follow-me-sample-project/deepracer_follow_me_ws/
+        source /opt/ros/foxy/setup.bash 
 
-1. Launch the nodes required for follow me sample project using the shell script:
+1. Set the environment variables required to run Intel OpenVino scripts:
 
-        ./start_follow_me.sh
+        source /opt/intel/openvino_2021/bin/setupvars.sh
+
+1. Source the setup script for the installed packages:
+
+        source ~/deepracer_ws/aws-deepracer-follow-me-sample-project/deepracer_follow_me_ws/install/setup.bash
+
+1. Launch the nodes required for follow me sample project:
+
+        ros2 launch follow_me_launcher follow_me_launcher.py
 
 ### Enabling “followme” mode using CLI:
 

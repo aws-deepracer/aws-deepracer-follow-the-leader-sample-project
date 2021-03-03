@@ -42,3 +42,7 @@
     uri: https://github.com/aws-racer/aws-deepracer-usb-monitor-pkg.git
     local-name: aws-deepracer-usb-monitor-pkg
     version: main
+- git:
+    uri: https://github.com/GT-RAIL/async_web_server_cpp.git
+    local-name: async_web_server_cpp
+    version: ros2
