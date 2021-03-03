@@ -57,6 +57,10 @@ Open up a terminal on the DeepRacer device and run the following commands as roo
         git clone https://github.com/aws-racer/aws-deepracer-follow-me-sample-project.git
         cd ~/deepracer_ws/aws-deepracer-follow-me-sample-project/deepracer_follow_me_ws/
 
+1. Clone the async_web_server_cpp, web_video_server and rplidar_ros dependency packages on the DeepRacer device:
+
+        cd ~/deepracer_ws/aws-deepracer-follow-me-sample-project/deepracer_follow_me_ws/ && ./install_dependencies.sh
+
 1. Fetch unreleased dependencies:
 
         cd ~/deepracer_ws/aws-deepracer-follow-me-sample-project/deepracer_follow_me_ws/
