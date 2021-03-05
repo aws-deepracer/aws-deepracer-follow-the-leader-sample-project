@@ -176,14 +176,14 @@ def api_wifi_reset():
         return jsonify({"success": True, "ip_address": ip_address})
 
     if utility.is_network_inactive(wifi_name):
-        utility.execute(f"/usr/bin/nmcli con del {wifi_name}", shlex_split=True)
+        utility.execute(['sudo', '/usr/bin/nmcli', 'con', 'del', wifi_name])
 
-    utility.execute(f"sudo /usr/bin/nmcli device wifi con {wifi_name} "
-                    f"password {wifi_password} ifname mlan0", shlex_split=True)
+    utility.execute(['sudo', '/usr/bin/nmcli', 'device', 'wifi', 'con', wifi_name,
+                     'password', wifi_password, 'ifname', 'mlan0'])
 
     if not utility.is_network_connected(wifi_name):
         webserver_node.get_logger().info("Wifi not changed successfully, clean up.")
-        utility.execute(f"sudo /usr/bin/nmcli con del {wifi_name}", shlex_split=True)
+        utility.execute(['sudo', '/usr/bin/nmcli', 'con', 'del', wifi_name])
         return jsonify({"success": False,
                         "reason": "Could not connect to the Wi-Fi network.\
                          Check your network ID and password and try again."})

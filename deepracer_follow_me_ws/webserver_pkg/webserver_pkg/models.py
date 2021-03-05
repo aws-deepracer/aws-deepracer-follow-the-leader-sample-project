@@ -67,7 +67,7 @@ def get_file_and_folder_info(path):
     model_metadata_sensors_display_names = \
         [constants.SENSOR_INPUT_NAME_MAPPING[constants.INVALID_ENUM_VALUE]]
 
-    size = utility.execute(f"du -sh {path}", shlex_split=True)[1].split("\t")[0]
+    size = utility.execute(["du", "-sh", path])[1].split("\t")[0]
     err_code, err_msg, model_metadata_content = \
         read_model_metadata_file(os.path.join(path, "model_metadata.json"))
     if err_code == 0:

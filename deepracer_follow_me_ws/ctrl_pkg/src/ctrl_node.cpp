@@ -72,13 +72,13 @@ namespace SysCtrl {
 
             vehicleCtrlModesServiceCbGrp_ = this->create_callback_group(rclcpp::callback_group::CallbackGroupType::Reentrant);
             getVehicleCtrlModesService_ = this->create_service<deepracer_interfaces_pkg::srv::GetCtrlModesSrv>(GET_CTRL_MODES_SRV,
-                                                                                                         std::bind(&SysCtrl::CtrlNodeMgr::getCtrlModesHdl,
-                                                                                                         this,
-                                                                                                         std::placeholders::_1,
-                                                                                                         std::placeholders::_2,
-                                                                                                         std::placeholders::_3),
-                                                                                                         ::rmw_qos_profile_default,
-                                                                                                         vehicleCtrlModesServiceCbGrp_);
+                                                                                                               std::bind(&SysCtrl::CtrlNodeMgr::getCtrlModesHdl,
+                                                                                                               this,
+                                                                                                               std::placeholders::_1,
+                                                                                                               std::placeholders::_2,
+                                                                                                               std::placeholders::_3),
+                                                                                                               ::rmw_qos_profile_default,
+                                                                                                               vehicleCtrlModesServiceCbGrp_);
 
             vehicleModeServiceCbGrp_ = this->create_callback_group(rclcpp::callback_group::CallbackGroupType::Reentrant);
             setVehicleModeService_ = this->create_service<deepracer_interfaces_pkg::srv::ActiveStateSrv>(VEHICLE_STATE_SRV,

@@ -327,7 +327,6 @@ def control_modes_available():
               and error reason if call fails.
     """
     webserver_node = webserver_publisher_node.get_webserver_node()
-
     webserver_node.get_logger().info("Providing the number of available modes")
     try:
         get_ctrl_modes_req = GetCtrlModesSrv.Request()
@@ -347,5 +346,3 @@ def control_modes_available():
     except Exception as ex:
         webserver_node.get_logger().error(f"Unable to reach get ctrl modes service: {ex}")
         return jsonify(success=False, reason="Error")
-
-
