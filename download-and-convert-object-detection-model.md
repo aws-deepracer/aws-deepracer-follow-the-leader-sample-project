@@ -1,6 +1,6 @@
 # Download and convert object detection model
 
-The Follow Me sample project is an sample application built on top of the existing AWS DeepRacer application which uses object detection machine learning model through which the AWS DeepRacer device can identify and follow a person. More details about the Follow Me sample project and the components can be found [here](https://github.com/aws-racer/aws-deepracer-follow-me-sample-project).
+The Follow Me sample project is an sample application built on top of the existing AWS DeepRacer application which uses object detection machine learning model through which the AWS DeepRacer device can identify and follow a person. More details about the Follow Me sample project and the components can be found [here](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project).
 
 The Follow Me sample project uses a sample open sourced object detection model suited to run high performance inference with minimum latency on the AWS DeepRacer device. The Follow Me sample project is designed to make it easy to replace this model by any other custom models and run the inference on it. We have tested the object detection using the Intel OpenVino Optimized [ssd_mobilenet_v2_coco](https://docs.openvinotoolkit.org/latest/omz_models_public_ssd_mobilenet_v2_coco_ssd_mobilenet_v2_coco.html) object detection model built on [Single-Shot multibox Detection (SSD)](https://arxiv.org/abs/1801.04381) network as the default model.
 

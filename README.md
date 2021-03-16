@@ -12,7 +12,7 @@ The source code is released under [Apache 2.0](https://aws.amazon.com/apache-2-0
 
 ### Prerequisites
 
-The AWS DeepRacer device comes with all the pre-requisite packages and libraries installed to run the Follow Me sample project. More details about pre installed set of packages and libraries on the DeepRacer, and installing required build systems can be found in the [Getting Started](https://github.com/aws-racer/aws-deepracer-launcher/blob/main/getting-started.md) section of the AWS DeepRacer Opensource page. Follow Me sample project requires the AWS DeepRacer application to be installed on the device as it leverages most of the packages from the core application.
+The AWS DeepRacer device comes with all the pre-requisite packages and libraries installed to run the Follow Me sample project. More details about pre installed set of packages and libraries on the DeepRacer, and installing required build systems can be found in the [Getting Started](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md) section of the AWS DeepRacer Opensource page. Follow Me sample project requires the AWS DeepRacer application to be installed on the device as it leverages most of the packages from the core application.
 
 The following are the additional software and hardware requirements to get the Follow Me sample project to work on the AWS DeepRacer device. 
 
@@ -54,7 +54,7 @@ Open up a terminal on the DeepRacer device and run the following commands as roo
 
 1. Clone the entire Follow Me sample project on the DeepRacer device.
 
-        git clone https://github.com/aws-racer/aws-deepracer-follow-me-sample-project.git
+        git clone https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project.git
         cd ~/deepracer_ws/aws-deepracer-follow-me-sample-project/deepracer_follow_me_ws/
 
 1. Clone the async_web_server_cpp, web_video_server and rplidar_ros dependency packages on the DeepRacer device:

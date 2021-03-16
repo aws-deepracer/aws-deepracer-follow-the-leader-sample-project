@@ -1,6 +1,6 @@
 # Follow Me Sample Application
 
-The Follow Me sample project is a sample application built on top of the existing AWS DeepRacer application which uses object detection machine learning model through which the AWS DeepRacer device can identify and follow a person. Explore the Follow Me sample project by cloning the [aws-deepracer-follow-me-sample-project](https://github.com/aws-racer/aws-deepracer-follow-me-sample-project).
+The Follow Me sample project is a sample application built on top of the existing AWS DeepRacer application which uses object detection machine learning model through which the AWS DeepRacer device can identify and follow a person. Explore the Follow Me sample project by cloning the [aws-deepracer-follow-me-sample-project](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project).
 
 The Follow Me application uses many nodes from the AWS DeepRacer core application as is and adds a few specific extension to the shared nodes. This application is built to work alongside the AWS DeepRacer core application so that we can run both of the applications simultaneously.
 
@@ -35,22 +35,22 @@ The Follow Me sample project is built to work on **AWS DeepRacer** with a single
 
 There are six packages (ROS Nodes) that are of importance for the Follow Me sample project.
  
-1. [Object Detection Package](https://github.com/aws-racer/aws-deepracer-follow-me-sample-project/tree/main/deepracer_follow_me_ws/object_detection_pkg) - Package responsible to detect object (person) from the camera sensor images and calculate the error (delta) in displacement of the object from ideal position to be provided to the follow-me navigation.
+1. [Object Detection Package](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/tree/main/deepracer_follow_me_ws/object_detection_pkg) - Package responsible to detect object (person) from the camera sensor images and calculate the error (delta) in displacement of the object from ideal position to be provided to the follow-me navigation.
 
-1. [Follow Me Navigation Package](https://github.com/aws-racer/aws-deepracer-follow-me-sample-project/tree/main/deepracer_follow_me_ws/follow_me_navigation_pkg) - Package responsible for collecting the delta results from object detection and mapping it to the servo message with throttle and steering angle values.
+1. [Follow Me Navigation Package](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/tree/main/deepracer_follow_me_ws/follow_me_navigation_pkg) - Package responsible for collecting the delta results from object detection and mapping it to the servo message with throttle and steering angle values.
 
-1. [Follow Me Launcher Package](https://github.com/aws-racer/aws-deepracer-follow-me-sample-project/tree/main/deepracer_follow_me_ws/follow_me_launcher) - The DeepRacer Interfaces ROS package is a foundational package that creates the custom service and message types that are used in the core AWS DeepRacer application, but has been modified to support Follow Me sample project.
+1. [Follow Me Launcher Package](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/tree/main/deepracer_follow_me_ws/follow_me_launcher) - The DeepRacer Interfaces ROS package is a foundational package that creates the custom service and message types that are used in the core AWS DeepRacer application, but has been modified to support Follow Me sample project.
 
-1. [Control Package](https://github.com/aws-racer/aws-deepracer-follow-me-sample-project/tree/main/deepracer_follow_me_ws/ctrl_pkg) - Package extended from AWS DeepRacer core application and responsible for creating main node with services exposed to be used by webserver backend API calls. This manages the mode of the car: manual, autonomous, calibration or followme.
+1. [Control Package](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/tree/main/deepracer_follow_me_ws/ctrl_pkg) - Package extended from AWS DeepRacer core application and responsible for creating main node with services exposed to be used by webserver backend API calls. This manages the mode of the car: manual, autonomous, calibration or followme.
 
-1. [DeepRacer Interfaces Package](https://github.com/aws-racer/aws-deepracer-follow-me-sample-project/tree/main/deepracer_follow_me_ws/deepracer_interfaces_pkg) - The DeepRacer Interfaces ROS package is a foundational package that creates the custom service and message types that are used in the Follow Me sample project.
+1. [DeepRacer Interfaces Package](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/tree/main/deepracer_follow_me_ws/deepracer_interfaces_pkg) - The DeepRacer Interfaces ROS package is a foundational package that creates the custom service and message types that are used in the Follow Me sample project.
 
-1. [Webserver Package](https://github.com/aws-racer/aws-deepracer-follow-me-sample-project/tree/main/deepracer_follow_me_ws/webserver_pkg) - Package extended from AWS DeepRacer core application and responsible for creating a collection of FLASK APIs that are called from the front end. These APIs call the required ROS services and return the result to the front end required for Follow Me sample project to interact with the device console.
+1. [Webserver Package](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/tree/main/deepracer_follow_me_ws/webserver_pkg) - Package extended from AWS DeepRacer core application and responsible for creating a collection of FLASK APIs that are called from the front end. These APIs call the required ROS services and return the result to the front end required for Follow Me sample project to interact with the device console.
 
 
 ## Follow me mode:
 
-The Follow Me sample project introduces a new mode (followme mode) of operation in the AWS DeepRacer device apart from the existing modes of operation(autonomous mode, calibration mode and manual mode). More details about the existing modes of operation in the AWS DeepRacer device is found [here](https://github.com/aws-racer/aws-deepracer-launcher/blob/main/modes-of-operation.md).  
+The Follow Me sample project introduces a new mode (followme mode) of operation in the AWS DeepRacer device apart from the existing modes of operation(autonomous mode, calibration mode and manual mode). More details about the existing modes of operation in the AWS DeepRacer device is found [here](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/modes-of-operation.md).  
 
 In the Follow me mode the DeepRacer devices takes the camera image input from the front facing camera connected to the car and runs it through the machine learning model to identify a person and calculate information required to plan its action and follow the person. Similar to the autonomous mode, there is an perception-inference-action step involved here as well, where the inference is done by an object detection model to obtain the bounding box data for a person identified in the image. Each perception-inference-action step involves a pipeline of a series of ROS messages published/subscribed at various nodes, to publish camera image, and then to publish the object detection deltas identifying person’s position and corresponding action data to follow the person.
 
@@ -135,4 +135,4 @@ The individual nodes used in the Follow Me sample project or the entire sample p
 
 ## Summary
 
-The Follow Me sample project leverages most of the concepts used in the AWS DeepRacer application You can learn more about the AWS DeepRacer core application [here](https://github.com/aws-racer/aws-deepracer-launcher/blob/main/getting-started.md).
+The Follow Me sample project leverages most of the concepts used in the AWS DeepRacer application You can learn more about the AWS DeepRacer core application [here](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md).

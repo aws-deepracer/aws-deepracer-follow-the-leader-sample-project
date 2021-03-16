@@ -2,7 +2,7 @@
 
 ## Overview
 
-The DeepRacer Web Server ROS package creates the *web_publisher_node* which is part of the Follow Me sample project and will be launched from the follow_me_launcher. For more information about the Follow Me sample project, see [Follow Me sample project](https://github.com/aws-racer/aws-deepracer-follow-me-sample-project).
+The DeepRacer Web Server ROS package creates the *web_publisher_node* which is part of the Follow Me sample project and will be launched from the follow_me_launcher. For more information about the Follow Me sample project, see [Follow Me sample project](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project).
 
 This node launches a Flask application as a background thread and creates service clients and subscribers for all the services and topics that are required by the APIs called from the DeepRacer vehicle console. This node acts as an interface between the AWS DeepRacer device console and the backend ROS services. This node was extended to provide more functionalities required for the Follow Me sample project.
 
@@ -14,7 +14,7 @@ The source code is released under [Apache 2.0](https://aws.amazon.com/apache-2-0
 
 ### Prerequisites
 
-The AWS DeepRacer device comes with all the pre-requisite packages and libraries installed to run the Follow Me sample project. More details about pre installed set of packages and libraries on the DeepRacer, and installing required build systems can be found in the [Getting Started](https://github.com/aws-racer/aws-deepracer-launcher/blob/main/getting-started.md) section of the AWS DeepRacer Opensource page.
+The AWS DeepRacer device comes with all the pre-requisite packages and libraries installed to run the Follow Me sample project. More details about pre installed set of packages and libraries on the DeepRacer, and installing required build systems can be found in the [Getting Started](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md) section of the AWS DeepRacer Opensource page.
 
 The webserver_pkg specifically depends on the following ROS2 packages as build and execute dependencies:
 
@@ -41,7 +41,7 @@ Open up a terminal on the DeepRacer device and run the following commands as roo
 
 1. Clone the entire Follow Me sample project on the DeepRacer device.
 
-        git clone https://github.com/aws-racer/aws-deepracer-follow-me-sample-project.git
+        git clone https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project.git
         cd ~/deepracer_ws/aws-deepracer-follow-me-sample-project/deepracer_follow_me_ws/
 
 1. Fetch unreleased dependencies:
