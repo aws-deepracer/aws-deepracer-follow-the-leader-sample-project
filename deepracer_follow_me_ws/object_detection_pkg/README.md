@@ -145,3 +145,9 @@ A launch file called object_detection_pkg_launch.py is included in this package 
 |----------- | ------------ | ----------- |
 | object_detection_delta | ObjectDetectionDeltaMsg | Message with Object Detection normalized error (delta) of the detected object from the target (reference) position with respect to x and y axes. |
 | detection_display | Image | Message to display the input stream of images after inference, published to the local web_video_server. |
+
+## Resources
+
+* AWS DeepRacer Opensource getting started: [https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md)
+* Follow Me sample project getting started: [https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/blob/main/getting-started.md](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/blob/main/getting-started.md)
+* Instructions to download and optimize the object detection model: [https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/blob/main/download-and-convert-object-detection-model.md](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/blob/main/download-and-convert-object-detection-model.md)

@@ -119,3 +119,7 @@ A launch file called follow_me_navigation_pkg_launch.py is included in this pack
 | ---------- | ------------ | ----------- |
 |set_max_speed|SetFollowMeMaxSpeedSrv|Sets Max Speed Percentage Scale for Follow Me Application.|
 
+## Resources
+
+* AWS DeepRacer Opensource getting started: [https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md)
+* Follow Me sample project getting started: [https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/blob/main/getting-started.md](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/blob/main/getting-started.md)

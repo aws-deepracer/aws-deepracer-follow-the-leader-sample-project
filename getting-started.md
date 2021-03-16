@@ -50,7 +50,7 @@ There are six packages (ROS Nodes) that are of importance for the Follow Me samp
 
 ## Follow me mode:
 
-The Follow Me sample project introduces a new mode (followme mode) of operation in the AWS DeepRacer device apart from the existing modes of operation(autonomous mode, calibration mode and manual mode). More details about the existing modes of operation in the AWS DeepRacer device is found [here](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/modes-of-operation.md).  
+The Follow Me sample project introduces a new mode (followme mode) of operation in the AWS DeepRacer device apart from the existing modes of operation(autonomous mode, calibration mode and manual mode). More details about the existing modes of operation in the AWS DeepRacer device is found [here](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/modes-of-operation.md).
 
 In the Follow me mode the DeepRacer devices takes the camera image input from the front facing camera connected to the car and runs it through the machine learning model to identify a person and calculate information required to plan its action and follow the person. Similar to the autonomous mode, there is an perception-inference-action step involved here as well, where the inference is done by an object detection model to obtain the bounding box data for a person identified in the image. Each perception-inference-action step involves a pipeline of a series of ROS messages published/subscribed at various nodes, to publish camera image, and then to publish the object detection deltas identifying person’s position and corresponding action data to follow the person.
 
@@ -136,3 +136,8 @@ The individual nodes used in the Follow Me sample project or the entire sample p
 ## Summary
 
 The Follow Me sample project leverages most of the concepts used in the AWS DeepRacer application You can learn more about the AWS DeepRacer core application [here](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md).
+
+## Resources
+
+* AWS DeepRacer Opensource getting started: [https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md)
+* AWS DeepRacer device modes of operation: [https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/modes-of-operation.md](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/modes-of-operation.md).

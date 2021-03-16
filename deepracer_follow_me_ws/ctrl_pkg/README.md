@@ -156,3 +156,8 @@ The ctrl_node provides the core functionality to manage the different modes of o
 | model_state | ModelStateSrv | Service that is called to execute the load model services in background thread. |
 | autonomous_throttle | NavThrottleSrv | Service that is called to set the scale value to multiply to the throttle during autonomous navigation. |
 | is_model_loading | GetModelLoadingStatusSrv | Service that is called to know if there is load model operation going on right now on the device in autonomous mode. |
+
+## Resources
+
+* AWS DeepRacer Opensource getting started: [https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md)
+* Follow Me sample project getting started: [https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/blob/main/getting-started.md](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/blob/main/getting-started.md)

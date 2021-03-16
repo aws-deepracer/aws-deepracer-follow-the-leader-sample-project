@@ -85,4 +85,4 @@ The Follow Me sample project expects the optimized model to be present in the /o
 
         cp frozen_inference_graph.* /opt/models
 
-For detailed information on Follow Me sample project, see Follow Me sample project [Getting Started](getting-started.md) section.
+For detailed information on Follow Me sample project, see Follow Me sample project [Getting Started](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/blob/main/getting-started.md) section.

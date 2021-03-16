@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Follow Me sample project is an sample application built on top of the existing AWS DeepRacer application uses object detection machine learning model through which the AWS DeepRacer device can identify and follow a person. For detailed information on Follow Me sample project, see Follow Me sample project [Getting Started](getting-started.md) section.
+The Follow Me sample project is an sample application built on top of the existing AWS DeepRacer application uses object detection machine learning model through which the AWS DeepRacer device can identify and follow a person. For detailed information on Follow Me sample project, see Follow Me sample project [Getting Started](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/blob/main/getting-started.md) section.
 
 ## License
 
@@ -16,7 +16,7 @@ The AWS DeepRacer device comes with all the pre-requisite packages and libraries
 
 The following are the additional software and hardware requirements to get the Follow Me sample project to work on the AWS DeepRacer device. 
 
-1. **Download and Optimize the object detection model:** Follow the [instructions](download-and-convert-object-detection-model.md) to download and optimize the object detection model and copy it to the required location on the AWS DeepRacer device.
+1. **Download and Optimize the object detection model:** Follow the [instructions](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/blob/main/download-and-convert-object-detection-model.md) to download and optimize the object detection model and copy it to the required location on the AWS DeepRacer device.
 
 1. **Setup Intel Neural Compute Stick 2 (optional):** The object_detection_node provides functionality to offload the inference to a Intel Neural Compute Stick 2 connected to the AWS DeepRacer device. This is an optional setting that is provided to enhance the inference performance of the object detection model. More details about running Inference on the Movidius NCS (Neural Compute Stick) with OpenVINO™ toolkit can be found here: https://www.youtube.com/watch?v=XPvMrGobe7I
 
@@ -316,3 +316,9 @@ Applies to the object_detection_node
 | ---------------- |  ----------- |
 | DEVICE (optional) | If set as MYRIAD, will use the Intel Compute Stick 2 for inference. Else uses CPU for inference by default, even if removed. |
 | PUBLISH_DISPLAY_OUTPUT | Set to True/False if the inference output images need to be published to localhost using web_video_server|
+
+## Resources
+
+* AWS DeepRacer Opensource getting started: [https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md)
+* Follow Me sample project getting started: [https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/blob/main/getting-started.md](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/blob/main/getting-started.md)
+* Instructions to download and optimize the object detection model: [https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/blob/main/download-and-convert-object-detection-model.md](https://github.com/awsdeepracer/aws-deepracer-follow-me-sample-project/blob/main/download-and-convert-object-detection-model.md)
