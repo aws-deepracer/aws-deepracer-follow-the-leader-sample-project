@@ -141,11 +141,11 @@ The MAX_SPEED scale of the DeepRacer can be modified using ros2 service call in 
 
 1. Change the MAX SPEED to xx% of the MAX Scale:
 
-        ros2 service call /ftl_navigation_pkg/set_max_speed deepracer_interfaces_pkg/srv/SetFollowMeMaxSpeedSrv “{max_speed_pct: 0.xx}”
+        ros2 service call /ftl_navigation_pkg/set_max_speed deepracer_interfaces_pkg/srv/SetMaxSpeedSrv “{max_speed_pct: 0.xx}”
 
     Example: Change the MAX SPEED to 75% of the MAX Scale:
 
-        ros2 service call /ftl_navigation_pkg/set_max_speed deepracer_interfaces_pkg/srv/SetFollowMeMaxSpeedSrv “{max_speed_pct: 0.75}”
+        ros2 service call /ftl_navigation_pkg/set_max_speed deepracer_interfaces_pkg/srv/SetMaxSpeedSrv “{max_speed_pct: 0.75}”
 
 
 ## Launch Files

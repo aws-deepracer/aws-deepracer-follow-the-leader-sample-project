@@ -196,7 +196,7 @@ def api_manual_drive():
 
 @VEHICLE_CONTROL_BLUEPRINT.route("/api/drive_mode", methods=["PUT", "POST"])
 def api_set_drive_mode():
-    """API to toggle the drive mode between Autonomous/Manual/Follow Me mode.
+    """API to toggle the drive mode between Autonomous/Manual/Follow the Leader(FTL) mode.
 
     Returns:
         dict: Execution status if the API call was successful and error
@@ -213,14 +213,14 @@ def api_set_drive_mode():
     elif drive_mode == "auto":
         drive_mode_state = 1
     else:
-        # Follow Me mode
+        # Follow the Leader(FTL) mode.
         drive_mode_state = 3
 
     try:
         vehicle_state_req = ActiveStateSrv.Request()
         vehicle_state_req.state = drive_mode_state
         vehicle_state_res = call_service_sync(webserver_node.vehicle_state_cli,
-                                                vehicle_state_req)
+                                              vehicle_state_req)
         if vehicle_state_res and (vehicle_state_res.error == 0):
             return jsonify(success=True)
         else:
