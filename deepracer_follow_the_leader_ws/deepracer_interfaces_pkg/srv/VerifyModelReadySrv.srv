@@ -1,0 +1,5 @@
+# Model folder name in the install directory.
+string model_name
+---
+# True if the model is properly loaded/has checksum.txt in the model folder else False.
+bool response_status

@@ -1,0 +1,5 @@
+---
+# Status to indicate model is loading or already loaded.
+string model_loading_status
+# Error flag indicating successful/failed service call.
+int32 error

@@ -1,0 +1,9 @@
+---
+# Flag indicating if the LiDAR sensor is connected and LiDAR data is being read.
+int8 lidar_status
+# Flag indicating if the single camera is connected and single camera data is being read.
+int8 single_camera_status
+# Flag indicating if the two cameras are connected and two cameras data is being read.
+int8 stereo_camera_status
+# Error flag indicating successful/failed service call.
+int32 error

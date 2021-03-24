@@ -1,0 +1,5 @@
+# Flag to indicate if we should check for software update immediately.
+int32 force_update_check
+---
+# Identifier with the current software update state details.
+int32 software_update_state
