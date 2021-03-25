@@ -26,7 +26,7 @@ The following are the additional software and hardware requirements to get the F
 
     1. Switch to root user:
 
-        sudo su
+            sudo su
 
     1. Navigate to the OpenVino installation directory:
 
