@@ -105,7 +105,7 @@ A launch file called ftl_navigation_pkg_launch.py is included in this package th
 
 | Topic Name | Message Type | Description |
 |----------- | ------------ | ----------- |
-|/object_detection_pkg/object_detection_delta|ObjectDetectionDeltaMsg|Message with Object Detection normalized error (delta) of the detected object from the target (reference) position with respect to x and y axes.|
+|/object_detection_pkg/object_detection_delta|DetectionDeltaMsg|Message with Object Detection normalized error (delta) of the detected object from the target (reference) position with respect to x and y axes.|
 
 #### Published Topics
 

@@ -41,7 +41,7 @@ from rclpy.qos import (QoSProfile,
                        QoSHistoryPolicy,
                        QoSReliabilityPolicy)
 
-from deepracer_interfaces_pkg.msg import (ObjectDetectionDeltaMsg,
+from deepracer_interfaces_pkg.msg import (DetectionDeltaMsg,
                                           ServoCtrlMsg)
 from deepracer_interfaces_pkg.srv import SetMaxSpeedSrv
 from ftl_navigation_pkg import (constants,
@@ -64,7 +64,7 @@ class FTLNavigationNode(Node):
 
         # Create subscription to detection deltas from object_detection_node.
         self.detection_delta_subscriber = \
-            self.create_subscription(ObjectDetectionDeltaMsg,
+            self.create_subscription(DetectionDeltaMsg,
                                      constants.OBJECT_DETECTION_DELTA_TOPIC,
                                      self.detection_delta_cb,
                                      qos_profile)
@@ -139,7 +139,7 @@ class FTLNavigationNode(Node):
            is received from object_detection_node.
 
         Args:
-            detection_delta (ObjectDetectionDeltaMsg): Message containing the normalized detection
+            detection_delta (DetectionDeltaMsg): Message containing the normalized detection
                                                        delta in x and y axes respectively passed as
                                                        a list.
         """
@@ -275,7 +275,7 @@ class FTLNavigationNode(Node):
            from double buffer, decides the action and sends it to servo.
 
         Args:
-            msg: detection_delta (ObjectDetectionDeltaMsg): Message containing the normalized
+            msg: detection_delta (DetectionDeltaMsg): Message containing the normalized
                  detection delta in x and y axes respectively passed as a list.
         """
         try:

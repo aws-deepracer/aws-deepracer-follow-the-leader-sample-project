@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Object Detection ROS package creates the object_detection_node which is responsible for collecting sensor data (camera images) from sensor_fusion_pkg and running them through the object detection model to find a specified object and providing normalized delta of the found object from target position. This delta value is published using a ROS publisher as ObjectDetectionDeltaMsg data. For more information about the Follow the Leader(FTL) sample project, see [Follow the Leader(FTL) sample project](https://github.com/awsdeepracer/aws-deepracer-follow-the-leader-sample-project).
+The Object Detection ROS package creates the object_detection_node which is responsible for collecting sensor data (camera images) from sensor_fusion_pkg and running them through the object detection model to find a specified object and providing normalized delta of the found object from target position. This delta value is published using a ROS publisher as DetectionDeltaMsg data. For more information about the Follow the Leader(FTL) sample project, see [Follow the Leader(FTL) sample project](https://github.com/awsdeepracer/aws-deepracer-follow-the-leader-sample-project).
 
 ## License
 
@@ -143,7 +143,7 @@ A launch file called object_detection_pkg_launch.py is included in this package 
 
 | Topic Name | Message Type | Description |
 |----------- | ------------ | ----------- |
-| object_detection_delta | ObjectDetectionDeltaMsg | Message with Object Detection normalized error (delta) of the detected object from the target (reference) position with respect to x and y axes. |
+| object_detection_delta | DetectionDeltaMsg | Message with Object Detection normalized error (delta) of the detected object from the target (reference) position with respect to x and y axes. |
 | detection_display | Image | Message to display the input stream of images after inference, published to the local web_video_server. |
 
 ## Resources

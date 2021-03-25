@@ -42,7 +42,7 @@ set(msg_files
   "msg/NetworkConnectionStatus.msg"
   "msg/SoftwareUpdatePctMsg.msg"
   "msg/USBFileSystemNotificationMsg.msg"
-  "msg/ObjectDetectionDeltaMsg.msg"
+  "msg/DetectionDeltaMsg.msg"
 )
 set(srv_files
   "srv/ActiveStateSrv.srv"

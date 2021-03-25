@@ -59,13 +59,13 @@ In the Follow the Leader(FTL) mode the DeepRacer devices takes the camera image 
 
 ### Inference (Decision)
 
-The inference step is handled by the Object Detection ROS package that creates the object_detection_node responsible for collecting sensor data (camera images) from sensor_fusion_pkg and running object detection on specified object. A target center is specified in the object_detection_node that acts as reference to calculate the detection error (delta) whenever an object is detected. As part of this step, the node publishes the normalized delta data from target point as ObjectDetectionDeltaMsg data identifying the person/object’s position. 
+The inference step is handled by the Object Detection ROS package that creates the object_detection_node responsible for collecting sensor data (camera images) from sensor_fusion_pkg and running object detection on specified object. A target center is specified in the object_detection_node that acts as reference to calculate the detection error (delta) whenever an object is detected. As part of this step, the node publishes the normalized delta data from target point as DetectionDeltaMsg data identifying the person/object’s position. 
 
 For each input image, the node will detect object (person) and get coordinates of center of bounding box and calculate the (x, y) delta of the [current position of detected object - target position] is calculated as shown in the figure below:
 
 ![ftl-object-detection-bb](/media/ftl-object-detection-bb.png)
 
-This delta value is published as the ObjectDetectionDeltaMsg data to /object_detection_pkg/object_detection_delta topic which will be read by the follow the Leader(FTL) navigation node. If no object is detected in a image, the object_detection_node publishes a zero error (delta) signifying that the DeepRacer is already at the target position and need not move.
+This delta value is published as the DetectionDeltaMsg data to /object_detection_pkg/object_detection_delta topic which will be read by the follow the Leader(FTL) navigation node. If no object is detected in a image, the object_detection_node publishes a zero error (delta) signifying that the DeepRacer is already at the target position and need not move.
 
 
 ### Action (Navigation)

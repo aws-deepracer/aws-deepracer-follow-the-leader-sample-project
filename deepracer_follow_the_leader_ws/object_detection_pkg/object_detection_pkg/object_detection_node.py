@@ -46,7 +46,7 @@ from cv_bridge import CvBridge
 from sensor_msgs.msg import Image
 
 from deepracer_interfaces_pkg.msg import (EvoSensorMsg,
-                                          ObjectDetectionDeltaMsg)
+                                          DetectionDeltaMsg)
 from openvino.inference_engine import IECore
 import ngraph as ng
 from object_detection_pkg import (constants,
@@ -95,7 +95,7 @@ class ObjectDetectionNode(Node):
                                   10)
 
         # Creating publisher for error (delta) from target bb position.
-        self.delta_publisher = self.create_publisher(ObjectDetectionDeltaMsg,
+        self.delta_publisher = self.create_publisher(DetectionDeltaMsg,
                                                      constants.DELTA_PUBLISHER_TOPIC,
                                                      qos_profile)
         self.bridge = CvBridge()
@@ -218,12 +218,12 @@ class ObjectDetectionNode(Node):
             bb_center_y (float): y co-ordinate of center of detected bounding box.
 
         Returns:
-            delta (ObjectDetectionDeltaMsg): Normalized Error (delta) in x and y respectively
+            delta (DetectionDeltaMsg): Normalized Error (delta) in x and y respectively
             returned as a list of floats and converted to ObjectDetectionErrorMsg.
         """
         delta_x = (bb_center_x - target_x) / self.w
         delta_y = (bb_center_y - target_y) / self.h
-        delta = ObjectDetectionDeltaMsg()
+        delta = DetectionDeltaMsg()
         delta.delta = [delta_x, delta_y]
         self.get_logger().debug(f"Delta from target position: {delta_x} {delta_y}")
         return delta
