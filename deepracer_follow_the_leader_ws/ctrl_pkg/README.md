@@ -31,6 +31,10 @@ The ctrl_pkg specifically depends on the following ROS2 packages as build and ex
 
 Open up a terminal on the DeepRacer device and run the following commands as root user.
 
+1. Switch to root user before you source the ROS2 installation:
+
+        sudo su
+
 1. Source the ROS2 Foxy setup bash script:
 
         source /opt/ros/foxy/setup.bash 
@@ -71,6 +75,10 @@ The ctrl_node provides basic system level functionality for the AWS DeepRacer ap
 ### Run the node
 
 To launch the built ctrl_node as root user on the AWS DeepRacer device open up another terminal on the device and run the following commands as root user:
+
+1. Switch to root user before you source the ROS2 installation:
+
+        sudo su
 
 1. Navigate to the Follow the Leader(FTL) workspace:
 

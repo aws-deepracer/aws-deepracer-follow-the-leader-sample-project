@@ -24,6 +24,10 @@ The following are the additional software and hardware requirements to get the F
 
     Attach the Neural Compute Stick 2 firmly in the back slot of the AWS DeepRacer, and open up a terminal and run the following commands as root user to install the dependencies of the Intel Neural Compute Stick 2 on the AWS DeepRacer device:
 
+    1. Switch to root user:
+
+        sudo su
+
     1. Navigate to the OpenVino installation directory:
 
             cd /opt/intel/openvino_2021.1.110/install_dependencies
@@ -36,6 +40,10 @@ The following are the additional software and hardware requirements to get the F
 ## Downloading and Building
 
 Open up a terminal on the DeepRacer device and run the following commands as root user.
+
+1. Switch to root user before you source the ROS2 installation:
+
+        sudo su
 
 1. Stop the deepracer-core.service that is currently running on the device:
 
@@ -83,6 +91,10 @@ Open up a terminal on the DeepRacer device and run the following commands as roo
 
 To launch the Follow the Leader(FTL) sample application as root user on the AWS DeepRacer device open up another terminal on the device and run the following commands as root user:
 
+1. Switch to root user before you source the ROS2 installation:
+
+        sudo su
+
 1. Source the ROS2 Foxy setup bash script:
 
         source /opt/ros/foxy/setup.bash 
@@ -102,6 +114,10 @@ To launch the Follow the Leader(FTL) sample application as root user on the AWS 
 ### Enabling “followtheleader” mode using CLI:
 
 Once the ftl_launcher has been kicked-off, open up a adjacent new terminal as root user:
+
+1. Switch to root user before you source the ROS2 installation:
+
+        sudo su
 
 1. Navigate to the Follow the Leader(FTL) workspace:
 
@@ -126,6 +142,10 @@ Once the ftl_launcher has been kicked-off, open up a adjacent new terminal as ro
 ### Changing the MAX_SPEED scale of the DeepRacer:
 
 The MAX_SPEED scale of the DeepRacer can be modified using ros2 service call in case the car isn’t moving as expected. This can occur due to multiple reasons not limited to vehicle battery percentage, surface on which the car is being operated etc.
+
+1. Switch to root user before you source the ROS2 installation:
+
+        sudo su
 
 1. Navigate to the Follow the Leader(FTL) workspace:
 

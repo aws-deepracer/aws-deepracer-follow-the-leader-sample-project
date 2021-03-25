@@ -26,6 +26,10 @@ The following are the additional software and hardware requirements to get the o
 
     Attach the Neural Compute Stick 2 firmly in the back slot of the AWS DeepRacer, and open up a terminal and run the following commands as root user to install the dependencies of the Intel Neural Compute Stick 2 on the AWS DeepRacer device:
 
+    1. Switch to root user:
+
+        sudo su
+
     1. Navigate to the OpenVino installation directory:
 
             cd /opt/intel/openvino_2021.1.110/install_dependencies
@@ -38,6 +42,10 @@ The following are the additional software and hardware requirements to get the o
 ## Downloading and Building
 
 Open up a terminal on the DeepRacer device and run the following commands as root user.
+
+1. Switch to root user before you source the ROS2 installation:
+
+        sudo su
 
 1. Source the ROS2 Foxy setup bash script:
 
@@ -79,6 +87,10 @@ Although the **object_detection_node** is built to work with the Follow the Lead
 ### Run the node
 
 Configure the launch file to specify which device to use for inference (for more details, see the extended configuration section below). To launch the built object_detection_node as root user on the AWS DeepRacer device, open up another terminal on the device and run the following commands as root user:
+
+1. Switch to root user before you source the ROS2 installation:
+
+        sudo su
 
 1. Navigate to the Follow the Leader(FTL) workspace:
 
