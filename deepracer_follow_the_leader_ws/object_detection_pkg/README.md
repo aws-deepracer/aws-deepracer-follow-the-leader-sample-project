@@ -32,7 +32,11 @@ The following are the additional software and hardware requirements to get the o
 
     1. Navigate to the OpenVino installation directory:
 
-            cd /opt/intel/openvino_2021.1.110/install_dependencies
+            cd /opt/intel/openvino_2021/install_dependencies
+
+    1. Set the environment variables required to run Intel OpenVino scripts:
+
+            source /opt/intel/openvino_2021/bin/setupvars.sh
 
     1. Run the dependency installation script for Intel Neural Compute Stick:
 

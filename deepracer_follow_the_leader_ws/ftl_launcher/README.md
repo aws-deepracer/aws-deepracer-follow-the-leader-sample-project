@@ -30,12 +30,15 @@ The following are the additional software and hardware requirements to get the F
 
     1. Navigate to the OpenVino installation directory:
 
-            cd /opt/intel/openvino_2021.1.110/install_dependencies
+            cd /opt/intel/openvino_2021/install_dependencies
+
+    1. Set the environment variables required to run Intel OpenVino scripts:
+
+            source /opt/intel/openvino_2021/bin/setupvars.sh
 
     1. Run the dependency installation script for Intel Neural Compute Stick:
 
             ./install_NCS_udev_rules.sh
-
 
 ## Downloading and Building
 
@@ -161,11 +164,11 @@ The MAX_SPEED scale of the DeepRacer can be modified using ros2 service call in 
 
 1. Change the MAX SPEED to xx% of the MAX Scale:
 
-        ros2 service call /ftl_navigation_pkg/set_max_speed deepracer_interfaces_pkg/srv/SetMaxSpeedSrv “{max_speed_pct: 0.xx}”
+        ros2 service call /ftl_navigation_pkg/set_max_speed deepracer_interfaces_pkg/srv/SetMaxSpeedSrv "{max_speed_pct: 0.xx}"
 
     Example: Change the MAX SPEED to 75% of the MAX Scale:
 
-        ros2 service call /ftl_navigation_pkg/set_max_speed deepracer_interfaces_pkg/srv/SetMaxSpeedSrv “{max_speed_pct: 0.75}”
+        ros2 service call /ftl_navigation_pkg/set_max_speed deepracer_interfaces_pkg/srv/SetMaxSpeedSrv "{max_speed_pct: 0.75}"
 
 
 ## Launch Files
