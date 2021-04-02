@@ -2,7 +2,7 @@
 
 ## Overview
 
-The DeepRacer Control ROS package creates the *ctrl_node* which is part of the Follow the Leader(FTL) sample project and will be launched from the ftl_launcher. This package was extended and modified from the DeepRacer Control ROS package developed for the core application. For more information about the Follow the Leader(FTL) sample project, see [Follow the Leader(FTL) sample project](https://github.com/awsdeepracer/aws-deepracer-follow-the-leader-sample-project).
+The DeepRacer Control ROS package creates the *ctrl_node* which is part of the Follow the Leader(FTL) sample project and will be launched from the ftl_launcher. This package was extended and modified from the DeepRacer Control ROS package developed for the core application. For more information about the Follow the Leader(FTL) sample project, see [Follow the Leader(FTL) sample project](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project).
 
 This is the main node with services exposed to be used by webserver backend API calls. This node in the AWS DeepRacer application manages the different mode of the device [manual, autonomous, calibration]. It allows us to maintain the device in a single mode at any point of time so that the overlapping functionalities (like servo messages, etc) are not conflicting each other. In this package, an additional mode **followtheleader** has been added to support the Follow the Leader(FTL) sample project.
 
@@ -14,7 +14,7 @@ The source code is released under [Apache 2.0](https://aws.amazon.com/apache-2-0
 
 ### Prerequisites
 
-The AWS DeepRacer device comes with all the pre-requisite packages and libraries installed to run the Follow the Leader(FTL) sample project. More details about pre installed set of packages and libraries on the DeepRacer, and installing required build systems can be found in the [Getting Started](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md) section of the AWS DeepRacer Opensource page.
+The AWS DeepRacer device comes with all the pre-requisite packages and libraries installed to run the Follow the Leader(FTL) sample project. More details about pre installed set of packages and libraries on the DeepRacer, and installing required build systems can be found in the [Getting Started](https://github.com/aws-deepracer/aws-deepracer-launcher/blob/main/getting-started.md) section of the AWS DeepRacer Opensource page.
 
 The ctrl_pkg specifically depends on the following ROS2 packages as build and execute dependencies:
 
@@ -50,7 +50,7 @@ Open up a terminal on the DeepRacer device and run the following commands as roo
 
 1. Clone the entire Follow the Leader(FTL) sample project on the DeepRacer device.
 
-        git clone https://github.com/awsdeepracer/aws-deepracer-follow-the-leader-sample-project.git
+        git clone https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project.git
         cd ~/deepracer_ws/aws-deepracer-follow-the-leader-sample-project/deepracer_follow_the_leader_ws/
 
 1. Fetch unreleased dependencies:
@@ -167,5 +167,5 @@ The ctrl_node provides the core functionality to manage the different modes of o
 
 ## Resources
 
-* AWS DeepRacer Opensource getting started: [https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md)
-* Follow the Leader(FTL) sample project getting started: [https://github.com/awsdeepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/getting-started.md](https://github.com/awsdeepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/getting-started.md)
+* AWS DeepRacer Opensource getting started: [https://github.com/aws-deepracer/aws-deepracer-launcher/blob/main/getting-started.md](https://github.com/aws-deepracer/aws-deepracer-launcher/blob/main/getting-started.md)
+* Follow the Leader(FTL) sample project getting started: [https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/getting-started.md](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/getting-started.md)

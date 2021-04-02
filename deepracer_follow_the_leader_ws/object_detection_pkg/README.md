@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Object Detection ROS package creates the object_detection_node which is responsible for collecting sensor data (camera images) from sensor_fusion_pkg and running them through the object detection model to find a specified object and providing normalized delta of the found object from target position. This delta value is published using a ROS publisher as DetectionDeltaMsg data. For more information about the Follow the Leader(FTL) sample project, see [Follow the Leader(FTL) sample project](https://github.com/awsdeepracer/aws-deepracer-follow-the-leader-sample-project).
+The Object Detection ROS package creates the object_detection_node which is responsible for collecting sensor data (camera images) from sensor_fusion_pkg and running them through the object detection model to find a specified object and providing normalized delta of the found object from target position. This delta value is published using a ROS publisher as DetectionDeltaMsg data. For more information about the Follow the Leader(FTL) sample project, see [Follow the Leader(FTL) sample project](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project).
 
 ## License
 
@@ -12,7 +12,7 @@ The source code is released under [Apache 2.0](https://aws.amazon.com/apache-2-0
 
 ### Prerequisites
 
-The AWS DeepRacer device comes with all the pre-requisite packages and libraries installed to run the Follow the Leader(FTL) sample project. More details about pre installed set of packages and libraries on the DeepRacer, and installing required build systems can be found in the [Getting Started](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md) section of the AWS DeepRacer Opensource page.
+The AWS DeepRacer device comes with all the pre-requisite packages and libraries installed to run the Follow the Leader(FTL) sample project. More details about pre installed set of packages and libraries on the DeepRacer, and installing required build systems can be found in the [Getting Started](https://github.com/aws-deepracer/aws-deepracer-launcher/blob/main/getting-started.md) section of the AWS DeepRacer Opensource page.
 
 The object_detection_pkg specifically depends on the following ROS2 packages as build and execute dependencies:
 
@@ -20,7 +20,7 @@ The object_detection_pkg specifically depends on the following ROS2 packages as 
 
 The following are the additional software and hardware requirements to get the object_detection_node to work on the AWS DeepRacer device. 
 
-1. **Download and Optimize the object detection model:** Follow the [instructions](https://github.com/awsdeepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/download-and-convert-object-detection-model.md) to download and optimize the object detection model and copy it to required location on the AWS DeepRacer device.
+1. **Download and Optimize the object detection model:** Follow the [instructions](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/download-and-convert-object-detection-model.md) to download and optimize the object detection model and copy it to required location on the AWS DeepRacer device.
 
 1. **Setup Intel Neural Compute Stick 2 (optional):** The object_detection_node provides functionality to offload the inference to a Intel Neural Compute Stick 2 connected to the AWS DeepRacer device. This is an optional setting that is included to enhance the inference performance of the object detection model. More details about running Inference on the Movidius NCS (Neural Compute Stick) with OpenVINO™ toolkit can be found here: https://www.youtube.com/watch?v=XPvMrGobe7I
 
@@ -66,7 +66,7 @@ Open up a terminal on the DeepRacer device and run the following commands as roo
 
 1. Clone the entire Follow the Leader(FTL) sample project on the DeepRacer device.
 
-        git clone https://github.com/awsdeepracer/aws-deepracer-follow-the-leader-sample-project.git
+        git clone https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project.git
         cd ~/deepracer_ws/aws-deepracer-follow-the-leader-sample-project/deepracer_follow_the_leader_ws/
 
 1. Fetch unreleased dependencies:
@@ -164,6 +164,6 @@ A launch file called object_detection_pkg_launch.py is included in this package 
 
 ## Resources
 
-* AWS DeepRacer Opensource getting started: [https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md)
-* Follow the Leader(FTL) sample project getting started: [https://github.com/awsdeepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/getting-started.md](https://github.com/awsdeepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/getting-started.md)
-* Instructions to download and optimize the object detection model: [https://github.com/awsdeepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/download-and-convert-object-detection-model.md](https://github.com/awsdeepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/download-and-convert-object-detection-model.md)
+* AWS DeepRacer Opensource getting started: [https://github.com/aws-deepracer/aws-deepracer-launcher/blob/main/getting-started.md](https://github.com/aws-deepracer/aws-deepracer-launcher/blob/main/getting-started.md)
+* Follow the Leader(FTL) sample project getting started: [https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/getting-started.md](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/getting-started.md)
+* Instructions to download and optimize the object detection model: [https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/download-and-convert-object-detection-model.md](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/download-and-convert-object-detection-model.md)

@@ -1,6 +1,6 @@
 # Download and convert object detection model
 
-The Follow the Leader(FTL) sample project is an sample application built on top of the existing AWS DeepRacer application which uses object detection machine learning model through which the AWS DeepRacer device can identify and follow a person. More details about the Follow the Leader(FTL) sample project and the components can be found [here](https://github.com/awsdeepracer/aws-deepracer-follow-the-leader-sample-project).
+The Follow the Leader(FTL) sample project is an sample application built on top of the existing AWS DeepRacer application which uses object detection machine learning model through which the AWS DeepRacer device can identify and follow a person. More details about the Follow the Leader(FTL) sample project and the components can be found [here](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project).
 
 The Follow the Leader(FTL) sample project uses a sample open sourced object detection model suited to run high performance inference with minimum latency on the AWS DeepRacer device. The Follow the Leader(FTL) sample project is designed to make it easy to replace this model by any other custom models and run the inference on it. We have tested the object detection using the Intel OpenVino Optimized [ssd_mobilenet_v2_coco](https://docs.openvinotoolkit.org/latest/omz_models_public_ssd_mobilenet_v2_coco_ssd_mobilenet_v2_coco.html) object detection model built on [Single-Shot multibox Detection (SSD)](https://arxiv.org/abs/1801.04381) network as the default model.
 
@@ -85,4 +85,4 @@ The Follow the Leader(FTL) sample project expects the optimized model to be pres
 
         cp frozen_inference_graph.* /opt/models
 
-For detailed information on Follow the Leader(FTL) sample project, see Follow the Leader(FTL) sample project [Getting Started](https://github.com/awsdeepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/getting-started.md) section.
+For detailed information on Follow the Leader(FTL) sample project, see Follow the Leader(FTL) sample project [Getting Started](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/getting-started.md) section.
