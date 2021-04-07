@@ -117,6 +117,11 @@ For every combination of the normalized delta combination in x and y (delta_x an
 Hence, using this pipeline for Perception - Inference - Action on a loop, the DeepRacer detects a person, plans what action is needed to bring the person at the target position and takes the action for each image it infers on, thus achieving the goal of following a person.
 
 
+## Demo
+
+![ftl-demo](/media/ftl-demo.gif)
+
+
 ## Possible next steps:
 
 This sample project can be used as a guide to think about more interesting applications by modifying/enhancing the logic and action space used in the ftl_navigation_node as well as using the following capability to build more applications. This sample project has been designed to give more independence on modifying or adding your own logic and ideas without having to rework everything from scratch.
