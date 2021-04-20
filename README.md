@@ -1,5 +1,9 @@
 # AWS DeepRacer Follow the Leader(FTL) sample project
 
+<p align="center">
+<img src="/media/deepracer_circle_sticker.png" width="250" height="250" >
+</p>
+
 ## Overview
 
 The Follow the Leader(FTL) sample project is an sample application built on top of the existing AWS DeepRacer application uses object detection machine learning model through which the AWS DeepRacer device can identify and follow a person. For detailed information on Follow the Leader(FTL) sample project, see Follow the Leader(FTL) sample project [Getting Started](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/getting-started.md) section.
