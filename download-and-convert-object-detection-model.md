@@ -1,14 +1,14 @@
 # Download and convert object detection model
 
-The Follow the Leader(FTL) sample project is an sample application built on top of the existing AWS DeepRacer application which uses object detection machine learning model through which the AWS DeepRacer device can identify and follow a person. More details about the Follow the Leader(FTL) sample project and the components can be found [here](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project).
+The Follow the Leader (FTL) sample project is an sample application built on top of the existing AWS DeepRacer application, which uses an object-detection machine learning model through which the AWS DeepRacer device can identify and follow a person. For more details about the Follow the Leader sample project, see the [AWS DeepRacer Follow the Leader (FTL) sample project](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project).
 
-The Follow the Leader(FTL) sample project uses a sample open sourced object detection model suited to run high performance inference with minimum latency on the AWS DeepRacer device. The Follow the Leader(FTL) sample project is designed to make it easy to replace this model by any other custom models and run the inference on it. We have tested the object detection using the Intel OpenVino Optimized [ssd_mobilenet_v2_coco](https://docs.openvinotoolkit.org/latest/omz_models_public_ssd_mobilenet_v2_coco_ssd_mobilenet_v2_coco.html) object detection model built on [Single-Shot multibox Detection (SSD)](https://arxiv.org/abs/1801.04381) network as the default model.
+The Follow the Leader (FTL) sample project uses a sample open source object-detection model suited to run high performance inference with minimum latency on the AWS DeepRacer device. The Follow the Leader (FTL) sample project is designed to make it easy to replace this model with any other custom model and run the inference on it. We have tested the object detection using the Intel OpenVino Optimized [ssd_mobilenet_v2_coco](https://docs.openvinotoolkit.org/latest/omz_models_public_ssd_mobilenet_v2_coco_ssd_mobilenet_v2_coco.html) object detection model built on the [Single-Shot multibox Detection (SSD)](https://arxiv.org/abs/1801.04381) network as the default model.
 
 ## Download the model
 
-As a pre-requisite setup to get the Follow the Leader(FTL) sample project working, open up a terminal and run the following instructions below as root user on the AWS DeepRacer device to download the [ssd_mobilenet_v2_coco](https://docs.openvinotoolkit.org/latest/omz_models_public_ssd_mobilenet_v2_coco_ssd_mobilenet_v2_coco.html) object detection model:
+As a prerequisite to using the Follow the Leader (FTL) sample project, open a terminal and run the following instructions as a root user on the AWS DeepRacer device to download the [ssd_mobilenet_v2_coco](https://docs.openvinotoolkit.org/latest/omz_models_public_ssd_mobilenet_v2_coco_ssd_mobilenet_v2_coco.html) object detection model:
 
-- Create a models directory:
+- Create a model directory:
 
         mkdir /opt/models
 
@@ -27,9 +27,9 @@ As a pre-requisite setup to get the Follow the Leader(FTL) sample project workin
 
 ## Optimize the model
 
-Run Intel Model Optimizer to optimize the [ssd_mobilenet_v2_coco](https://docs.openvinotoolkit.org/latest/omz_models_public_ssd_mobilenet_v2_coco_ssd_mobilenet_v2_coco.html) object detection model and convert it into OpenVino Intermediate Representation. More information regarding converting a Tensorflow model to OpenVINO optimized format can be found [here](https://docs.openvinotoolkit.org/2021.1/openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_TensorFlow.html).
+Run Intel Model Optimizer to optimize the [ssd_mobilenet_v2_coco](https://docs.openvinotoolkit.org/latest/omz_models_public_ssd_mobilenet_v2_coco_ssd_mobilenet_v2_coco.html) object detection model and convert it into OpenVino Intermediate Representation. For more information about converting a Tensorflow model to OpenVINO optimized format, see [Converting a TensorFlow Model](https://docs.openvinotoolkit.org/2021.1/openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_TensorFlow.html).
 
-To optimize the model, open up a terminal and run the following instructions below as root user on the AWS DeepRacer device:
+To optimize the model, open a terminal and run the following instructions as a root user on the AWS DeepRacer device:
 
 - Navigate to the Intel OpenVino Model Optimizer installation directory:
 
@@ -43,7 +43,7 @@ To optimize the model, open up a terminal and run the following instructions bel
 
         python3 mo_tf.py --input_model /opt/models/public/ssd_mobilenet_v2_coco/ssd_mobilenet_v2_coco_2018_03_29/frozen_inference_graph.pb --tensorflow_object_detection_api_pipeline_config /opt/models/public/ssd_mobilenet_v2_coco/ssd_mobilenet_v2_coco_2018_03_29/pipeline.config --input_shape [1,300,300,3] --tensorflow_use_custom_operations_config extensions/front/tf/ssd_v2_support.json
 
-- After successfully optimizing the model, you should see the results as below:
+- After successfully optimizing the model, you should see the following results:
 
         Model Optimizer arguments:
         Common parameters:
@@ -79,10 +79,10 @@ To optimize the model, open up a terminal and run the following instructions bel
         [ SUCCESS ] Memory consumed: 644 MB.
 
 
-## Copy the optimized artifacts to the model location:
+## Copy the optimized artifacts to the model location
 
-The Follow the Leader(FTL) sample project expects the optimized model to be present in the /opt/models folder. Copy the optimized frozen inference graph model files to /opt/models
+The Follow the Leader (FTL) sample project expects the optimized model to be present in the `/opt/models` folder. Copy the optimized frozen inference graph model files to `/opt/models`.
 
         cp frozen_inference_graph.* /opt/models
 
-For detailed information on Follow the Leader(FTL) sample project, see Follow the Leader(FTL) sample project [Getting Started](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/getting-started.md) section.
+For detailed information on the Follow the Leader (FTL) sample project, see the [Getting started](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/getting-started.md) section.
