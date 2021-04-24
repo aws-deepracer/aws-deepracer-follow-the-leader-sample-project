@@ -350,7 +350,9 @@ Applies to the object_detection_node
 
 ## Demo
 
-![ftl-demo](/media/ftl-demo.gif)
+<p align="center">
+<img src="/media/ftl-demo.gif" height="350" >
+</p>
 
 
 ## Resources
