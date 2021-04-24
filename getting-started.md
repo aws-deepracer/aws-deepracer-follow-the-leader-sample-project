@@ -29,7 +29,9 @@ The Follow the Leader(FTL) application uses many nodes from the AWS DeepRacer co
 
 The Follow the Leader(FTL) sample project is built to work on **AWS DeepRacer** with a single camera attached to it. Optionally, you can also connect an **Intel Neural Compute Stick 2** to the USB slot at the rear end of the car as depicted to improve the inference performance.
 
-![ftl-deepracer](/media/ftl-deepracer.png)
+<p align="center">
+<img src="/media/ftl-deepracer.png" height="450" >
+</p>
 
 ## Main Components
 
@@ -63,7 +65,9 @@ The inference step is handled by the Object Detection ROS package that creates t
 
 For each input image, the node will detect object (person) and get coordinates of center of bounding box and calculate the (x, y) delta of the [current position of detected object - target position] is calculated as shown in the figure below:
 
-![ftl-object-detection-bb](/media/ftl-object-detection-bb.png)
+<p align="center">
+<img src="/media/ftl-object-detection-bb.png" height="450" >
+</p>
 
 This delta value is published as the DetectionDeltaMsg data to /object_detection_pkg/object_detection_delta topic which will be read by the follow the Leader(FTL) navigation node. If no object is detected in a image, the object_detection_node publishes a zero error (delta) signifying that the DeepRacer is already at the target position and need not move.
 
@@ -72,7 +76,9 @@ This delta value is published as the DetectionDeltaMsg data to /object_detection
 
 The Follow the Leader(FTL) Navigation ROS package creates the ftl_navigation_node which decides the action / controller message to send out based on the normalized detection error (delta) received from object_detection_node. The node uses a very simple action space to account for the various combinations of the (x, y) delta values that are expected.
 
-![ftl-navigation-moves](/media/ftl-navigation-moves.png)
+<p align="center">
+<img src="/media/ftl-navigation-moves.png" height="450" >
+</p>
 
 Based on the above diagram, we can see that there are 9 different cases to handle with respect to the {delta_x, delta_y} values. These {delta_x, delta_y} values define the difference in the target position to the center of the bounding box in the current image that was run through object detection. We have defined the following simple action space to handle these 9 cases:
 
@@ -90,11 +96,16 @@ Based on the above diagram, we can see that there are 9 different cases to handl
 
 It is important to map specific thresholds for the {delta_x, delta_y} values to the actions defined above in order to ensure a safe and meaningful selection of actions. These actual delta values to trigger each of the action from the above action space was defined by empirically collecting the {delta_x, delta_y} value of the object (person standing in front of camera) at different positions with respect to the camera of the DeepRacer device. The grid diagram below shows a top down view of the placement positions with the car with camera placed at the bottom.
 
-![ftl-detection-delta-calculation-experiment-placement](/media/ftl-detection-delta-calculation-experiment-placement.png)
+<p align="center">
+<img src="/media/ftl-detection-delta-calculation-experiment-placement.png" height="450" >
+</p>
+
 
 The average of the changes in x and y (delta_x and delta_y) for over 3 x 20 incidents for each position is shared below. These {delta_x, delta_y} values with respect to the object (person) position from the camera enables us to create a safe distance bracket for valid actions. These brackets are then mapped to the steering and the speed values required by the DeepRacer servo node.
 
-![ftl-detection-delta-calculation-experiment-results](/media/ftl-detection-delta-calculation-experiment-results.png)
+<p align="center">
+<img src="/media/ftl-detection-delta-calculation-experiment-results.png" height="450" >
+</p>
 
 Based on the data collected, we get the following brackets:
 
@@ -119,7 +130,9 @@ Hence, using this pipeline for Perception - Inference - Action on a loop, the De
 
 ## Demo
 
-![ftl-demo](/media/ftl-demo.gif)
+<p align="center">
+<img src="/media/ftl-demo.gif" height="450" >
+</p>
 
 
 ## Possible next steps:
