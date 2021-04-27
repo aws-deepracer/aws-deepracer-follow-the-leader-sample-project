@@ -52,9 +52,9 @@ There are six packages (ROS Nodes) that are of importance for the Follow the Lea
 
 ## Follow the Leader (FTL) mode
 
-The Follow the Leader (FTL) sample project introduces a new mode (`followtheleader` or `ftl`) of operation in the AWS DeepRacer device apart from the existing modes of operation (`autonomous` mode, `calibration` mode, and `manual` mode). For more details about the existing modes of operation in the AWS DeepRacer device, see  [Modes of operation](https://github.com/aws-deepracer/aws-deepracer-launcher/blob/main/modes-of-operation.md).
+The Follow the Leader (FTL) sample project introduces a new mode (`followtheleader`) of operation in the AWS DeepRacer device apart from the existing modes of operation (`autonomous` mode, `calibration` mode, and `manual` mode). For more details about the existing modes of operation in the AWS DeepRacer device, see  [Modes of operation](https://github.com/aws-deepracer/aws-deepracer-launcher/blob/main/modes-of-operation.md).
 
-In `ftl` mode, the DeepRacer device takes the camera image input from the front-facing camera connected to the car and runs it through the machine learning model to identify a person, calculate information required to plan its action, and follow the person. Similar to `autonomous` mode, `ftl` mode has a perception-inference-action step, in which an object-detection model does the inference to obtain the bounding box data for a person identified in the image. Each perception-inference-action step involves a pipeline of a series of ROS messages published and subscribed at various nodes to publish the camera image, and then to publish the object detection deltas identifying the person’s position and corresponding action data to follow the person.
+In `followtheleader` mode, the DeepRacer device takes the camera image input from the front-facing camera connected to the car and runs it through the machine learning model to identify a person, calculate information required to plan its action, and follow the person. Similar to `autonomous` mode, `followtheleader` mode has a perception-inference-action step, in which an object-detection model does the inference to obtain the bounding box data for a person identified in the image. Each perception-inference-action step involves a pipeline of a series of ROS messages published and subscribed at various nodes to publish the camera image, and then to publish the object detection deltas identifying the person’s position and corresponding action data to follow the person.
 
 ![ftl-flow](/media/ftl-flow.png)
 
@@ -123,7 +123,7 @@ Based on the data collected, we get the following brackets:
 * FORWARD
 * REVERSE
 
-For every combination of the normalized delta combination in x and y (delta_x and delta_y), based on the preceding brackets of actions for steering and throttle, the `ftl_navigation_node` plans and publishes an action for the `servo_node` to pick up when *ftl* mode is enabled.
+For every combination of the normalized delta combination in x and y (delta_x and delta_y), based on the preceding brackets of actions for steering and throttle, the `ftl_navigation_node` plans and publishes an action for the `servo_node` to pick up when *followtheleader* mode is enabled.
 
 Using this pipeline for perception-inference-action on a loop, the DeepRacer detects a person, plans what action is needed to bring the person yo the target position, and takes the action for each image on which it infers, thus achieving the goal of following a person.
 
