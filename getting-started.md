@@ -125,7 +125,7 @@ Based on the data collected, we get the following brackets:
 
 For every combination of the normalized delta combination in x and y (delta_x and delta_y), based on the preceding brackets of actions for steering and throttle, the `ftl_navigation_node` plans and publishes an action for the `servo_node` to pick up when *followtheleader* mode is enabled.
 
-Using this pipeline for perception-inference-action on a loop, the DeepRacer detects a person, plans what action is needed to bring the person yo the target position, and takes the action for each image on which it infers, thus achieving the goal of following a person.
+Using this pipeline for perception-inference-action on a loop, the DeepRacer detects a person, plans what action is needed to bring the person to the target position, and takes the action for each image on which it infers, thus achieving the goal of following a person.
 
 
 ## Demo
@@ -146,7 +146,7 @@ You can implement multiple ideas to improve the **“follow”** feature:
 
 You can use the individual nodes used in the Follow the Leader (FTL) sample project or the entire sample project to develop something entirely different as well.
 
-* You can pick up the object detection node oto run independently as a part of your custom project by changing the object that should to be detected. For example, you can create a security bot which identifies suspicious activity and reports it by moving safely towards the cause, unlike security cameras which can have blind spots.
+* You can pick up the object detection node to run independently as a part of your custom project by changing the object that should to be detected. For example, you can create a security bot which identifies suspicious activity and reports it by moving safely towards the cause, unlike security cameras which can have blind spots.
 * You can modify the `ftl_navigation_node` and pick it up to run independently as part of custom project, or satisfy a different use case, such as searching for an object and notifying when it's found.
 * You can leverage the Mapping sample project as a part of your custom project to imitate a line follower, harnessing capabilities from object detection and navigation while mapping the surroundings, thus automating the mapping process!
 
