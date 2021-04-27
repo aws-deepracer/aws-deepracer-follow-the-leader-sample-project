@@ -26,19 +26,19 @@ The following are the additional software and hardware requirements to get the F
 
 Attach the Neural Compute Stick 2 firmly in the back slot of the AWS DeepRacer, open a terminal, and run the following commands as root user to install the dependencies of the Intel Neural Compute Stick 2 on the AWS DeepRacer device:
 
-    1. Switch to root user:
+1. Switch to the root user:
 
             sudo su
 
-    1. Navigate to the OpenVino installation directory:
+2. Navigate to the OpenVino installation directory:
 
             cd /opt/intel/openvino_2021/install_dependencies
 
-    1. Set the environment variables required to run Intel OpenVino scripts:
+3. Set the environment variables required to run the Intel OpenVino scripts:
 
             source /opt/intel/openvino_2021/bin/setupvars.sh
 
-    1. Run the dependency installation script for Intel Neural Compute Stick:
+4. Run the dependency installation script for the Intel Neural Compute Stick:
 
             ./install_NCS_udev_rules.sh
 
