@@ -41,7 +41,7 @@ There are six packages (ROS Nodes) that are of importance for the Follow the Lea
 
 1. [Follow the Leader (FTL) Navigation Package](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/tree/main/deepracer_follow_the_leader_ws/ftl_navigation_pkg) – Package responsible for launching all the required nodes for the Follow the Leader sample project. This launcher file also includes the launch setup for nodes from the AWS DeepRacer core application.
 
-1. [Follow the Leader (FTL) Launcher Package](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/tree/main/deepracer_follow_the_leader_ws/ftl_launcher) – The DeepRacer Interfaces ROS package is a foundational package that creates the custom service and message types that are used in the core AWS DeepRacer application, but has been modified to support Follow the Leader (FTL) sample project.
+1. [Follow the Leader (FTL) Launcher Package](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/tree/main/deepracer_follow_the_leader_ws/ftl_launcher) – The Follow the Leader(FTL) Launcher Package is responsible for launching all the required nodes for the Follow the Leader(FTL) sample project. This launcher file also includes the launch setup for nodes from the AWS DeepRacer core application.
 
 1. [Control Package](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/tree/main/deepracer_follow_the_leader_ws/ctrl_pkg) – Package extended from the AWS DeepRacer core application and responsible for creating a main node with exposed services to be used by webserver backend API calls. This manages the mode of the car: `manual`, `autonomous`, `calibration`, or `ftl`.
 
