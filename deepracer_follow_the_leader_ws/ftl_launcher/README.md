@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Follow the Leader (FTL) sample project is an sample application built on top of the existing AWS DeepRacer application, which uses an object-detection machine learning model through which the AWS DeepRacer device can identify and follow a person. For detailed information on Follow the Leader(FTL) sample project, see [Getting Started](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/getting-started.md).
+The AWS DeepRacer Follow the Leader (FTL) sample project is an sample application built on top of the existing AWS DeepRacer application, which uses an object-detection machine learning model through which the AWS DeepRacer device can identify and follow a person. For information, see [Getting Started](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/getting-started.md).
 
 ## License
 
@@ -10,13 +10,13 @@ The source code is released under [Apache 2.0](https://aws.amazon.com/apache-2-0
 
 ## Installation
 
-Follow this procedure for installation.
+Follow these steps to install the AWS DeepRacer Follow the Leader (FTL) launcher package.
 
 ### Prerequisites
 
-The AWS DeepRacer device comes with all the prerequisite packages and libraries installed to run the Follow the Leader (FTL) sample project. For more details about the preinstalled set of packages and libraries on the DeepRacer, and for instructions for installing the required build systems, see [Getting Started](https://github.com/aws-deepracer/aws-deepracer-launcher/blob/main/getting-started.md). The Follow the Leader (FTL) sample project requires the AWS DeepRacer application to be installed on the device, because it leverages most of the packages from the core application.
+The AWS DeepRacer device comes with all the prerequisite packages and libraries installed to run the FTL sample project. For more information about the preinstalled set of packages and libraries on the AWS DeepRacer, and about installing the required build systems, see [Getting started](https://github.com/aws-deepracer/aws-deepracer-launcher/blob/main/getting-started.md). The FTL sample project requires the AWS DeepRacer application to be installed on the device, because it leverages most of the packages from the core application.
 
-The following are the additional software and hardware requirements to get the Follow the Leader (FTL) sample project to work on the AWS DeepRacer device.
+The following are the additional software and hardware requirements to get the FTL sample project to work on the AWS DeepRacer device.
 
 1. **Download and optimize the object-detection model:** Follow the [instructions](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/download-and-convert-object-detection-model.md) to download and optimize the object-detection model and copy it to the required location on the AWS DeepRacer device.
 
@@ -24,9 +24,9 @@ The following are the additional software and hardware requirements to get the F
 
 1. **Set up the Intel Neural Compute Stick 2 (optional):** The `object_detection_node` provides functionality to offload the inference to a Intel Neural Compute Stick 2 connected to the AWS DeepRacer device. This is an optional setting that enhances the inference performance of the object-detection model. For more details about running inference on the Movidius NCS (Neural Compute Stick) with OpenVINO™ toolkit, see [this video](https://www.youtube.com/watch?v=XPvMrGobe7I).
 
-Attach the Neural Compute Stick 2 firmly in the back slot of the AWS DeepRacer, open a terminal, and run the following commands as root user to install the dependencies of the Intel Neural Compute Stick 2 on the AWS DeepRacer device:
+Attach the Neural Compute Stick 2 firmly in the back slot of the AWS DeepRacer, open a terminal, and run the following commands as the root user to install the dependencies of the Intel Neural Compute Stick 2 on the AWS DeepRacer device.
 
-    1. Switch to root user:
+    1. Switch to the root user:
 
             sudo su
 
@@ -44,17 +44,17 @@ Attach the Neural Compute Stick 2 firmly in the back slot of the AWS DeepRacer, 
 
 ## Downloading and Building
 
-Open a terminal on the DeepRacer device and run the following commands as the root user.
+Open a terminal on the AWS DeepRacer device and run the following commands as the root user.
 
-1. Switch to the root user before you source the ROS2 installation:
+1. Switch to the root user before you source the ROS 2 installation:
 
         sudo su
 
-1. Stop the deepracer-core.service that is currently running on the device:
+1. Stop the `deepracer-core.service` that is currently running on the device:
 
         systemctl stop deepracer-core
 
-1. Source the ROS2 Foxy setup bash script:
+1. Source the ROS 2 Foxy setup bash script:
 
         source /opt/ros/foxy/setup.bash 
 
@@ -67,12 +67,12 @@ Open a terminal on the DeepRacer device and run the following commands as the ro
         mkdir -p ~/deepracer_ws
         cd ~/deepracer_ws
 
-1. Clone the entire Follow the Leader (FTL) sample project on the DeepRacer device:
+1. Clone the entire FTL sample project on the AWS DeepRacer device:
 
         git clone https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project.git
         cd ~/deepracer_ws/aws-deepracer-follow-the-leader-sample-project/deepracer_follow_the_leader_ws/
 
-1. Clone the `async_web_server_cpp`, `web_video_server`, and `rplidar_ros` dependency packages on the DeepRacer device:
+1. Clone the `async_web_server_cpp`, `web_video_server`, and `rplidar_ros` dependency packages on the AWS DeepRacer device:
 
         cd ~/deepracer_ws/aws-deepracer-follow-the-leader-sample-project/deepracer_follow_the_leader_ws/ && ./install_dependencies.sh
 
@@ -89,18 +89,18 @@ Open a terminal on the DeepRacer device and run the following commands as the ro
 
         cd ~/deepracer_ws/aws-deepracer-follow-the-leader-sample-project/deepracer_follow_the_leader_ws/ && colcon build
 
-## Using the Follow the Leader (FTL) sample application
-Follow this procedure to use the Follow the Leader (FTL) sample application.
+## Using the FTL sample application
+Follow this procedure to use the FTL sample application.
 
 ### Running the node
 
-To launch the Follow the Leader (FTL) sample application as the root user on the AWS DeepRacer device, open another terminal on the device and run the following commands as the root user.
+To launch the FTL sample application as the root user on the AWS DeepRacer device, open another terminal on the device and run the following commands as the root user.
 
-1. Switch to the root user before you source the ROS2 installation:
+1. Switch to the root user before you source the ROS 2 installation:
 
         sudo su
 
-1. Source the ROS2 Foxy setup bash script:
+1. Source the ROS 2 Foxy setup bash script:
 
         source /opt/ros/foxy/setup.bash 
 
@@ -112,7 +112,7 @@ To launch the Follow the Leader (FTL) sample application as the root user on the
 
         source ~/deepracer_ws/aws-deepracer-follow-the-leader-sample-project/deepracer_follow_the_leader_ws/install/setup.bash
 
-1. Launch the nodes required for the Follow the Leader (FTL) sample project:
+1. Launch the nodes required for the FTL sample project:
 
         ros2 launch ftl_launcher ftl_launcher.py
 
@@ -120,15 +120,15 @@ To launch the Follow the Leader (FTL) sample application as the root user on the
 
 Once the `ftl_launcher` has been kicked off, open a new terminal as the root user.
 
-1. Switch to the root user before you source the ROS2 installation:
+1. Switch to the root user before you source the ROS 2 installation:
 
         sudo su
 
-1. Navigate to the Follow the Leader (FTL) workspace:
+1. Navigate to the FTL workspace:
 
         cd ~/deepracer_ws/aws-deepracer-follow-the-leader-sample-project/deepracer_follow_the_leader_ws/
 
-1. Source the ROS2 Foxy setup bash script:
+1. Source the ROS 2 Foxy setup bash script:
 
         source /opt/ros/foxy/setup.bash
 
@@ -136,27 +136,27 @@ Once the `ftl_launcher` has been kicked off, open a new terminal as the root use
 
         source ~/deepracer_ws/aws-deepracer-follow-the-leader-sample-project/deepracer_follow_the_leader_ws/install/setup.bash
 
-1. Set the mode of the DeepRacer via `ctrl_pkg` to `followtheleader` using the following ROS2 service call:
+1. Set the mode of the AWS DeepRacer via `ctrl_pkg` to `followtheleader` using the following ROS 2 service call:
 
         ros2 service call /ctrl_pkg/vehicle_state deepracer_interfaces_pkg/srv/ActiveStateSrv "{state: 3}"
 
-1. Enable `followtheleader` mode using the following ROS2 service call:
+1. Enable `followtheleader` mode using the following ROS 2 service call:
 
         ros2 service call /ctrl_pkg/enable_state deepracer_interfaces_pkg/srv/EnableStateSrv "{is_active: True}"
 
-### Changing the `MAX_SPEED` scale of the DeepRacer:
+### Changing the `MAX_SPEED` scale of the AWS DeepRacer
 
-You can modify the `MAX_SPEED` scale of the DeepRacer using a ROS2 service call in case the car isn’t moving as expected. This can occur because of the vehicle battery percentage, the surface on which the car is operating, or for other reasons.
+You can modify the `MAX_SPEED` scale of the AWS DeepRacer using a ROS 2 service call in case the car isn’t moving as expected. This can occur because of the vehicle battery percentage, the surface on which the car is operating, or for other reasons.
 
-1. Switch to the root user before you source the ROS2 installation:
+1. Switch to the root user before you source the ROS 2 installation:
 
         sudo su
 
-1. Navigate to the Follow the Leader(FTL) workspace:
+1. Navigate to the FTL workspace:
 
         cd ~/deepracer_ws/aws-deepracer-follow-the-leader-sample-project/deepracer_follow_the_leader_ws/
 
-1. Source the ROS2 Foxy setup bash script:
+1. Source the ROS 2 Foxy setup bash script:
 
         source /opt/ros/foxy/setup.bash
 
@@ -175,7 +175,7 @@ You can modify the `MAX_SPEED` scale of the DeepRacer using a ROS2 service call 
 
 ## Launch files
 
-The `ftl_launcher.py` included in this package is the main launcher file that launches all the required nodes for the Follow the Leader (FTL) sample project. This launcher file also includes the nodes from the AWS DeepRacer core application.
+The `ftl_launcher.py`, included in this package, is the main launcher file that launches all the required nodes for the FTL sample project. This launcher file also includes the nodes from the AWS DeepRacer core application.
 
         from launch import LaunchDescription
         from launch_ros.actions import Node
@@ -338,7 +338,7 @@ The `ftl_launcher.py` included in this package is the main launcher file that la
 
 ### Configuration file and parameters
 
-| Parameter Name   | Description  |
+| Parameter name   | Description  |
 | ---------------- |  ----------- |
 | `DEVICE` (optional) | If set as `MYRIAD`, uses the Intel Compute Stick 2 for inference. Else, uses the CPU for inference by default, even if it is removed. |
 | `PUBLISH_DISPLAY_OUTPUT` | Set to `True` or `False` if the inference output images need to be published to localhost using `web_video_server`.|
