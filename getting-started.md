@@ -29,7 +29,9 @@ The FTL application uses nodes from the AWS DeepRacer core application as is and
 
 The FTL sample project is built to work on **AWS DeepRacer** with a single camera attached to it. Optionally, you can also connect an **Intel Neural Compute Stick 2** to the USB slot at the rear end of the car as depicted to improve the inference performance.
 
-![ftl-deepracer](/media/ftl-deepracer.png)
+<p align="center">
+<img src="/media/ftl-deepracer.png" height="450" >
+</p>
 
 ## Main components
 
@@ -50,9 +52,9 @@ There are six packages (ROS Nodes) that are of importance for the FTL sample pro
 
 ## `Followtheleader` mode
 
-The FTL sample project introduces a new mode (`followtheleader` or `ftl`) of operation in the AWS DeepRacer device apart from the existing modes of operation (`autonomous` mode, `calibration` mode, and `manual` mode). For more details about the existing modes of operation in the AWS DeepRacer device, see  [Modes of operation](https://github.com/aws-deepracer/aws-deepracer-launcher/blob/main/modes-of-operation.md).
+The FTL sample project introduces a new mode (`followtheleader`) of operation in the AWS DeepRacer device apart from the existing modes of operation (`autonomous` mode, `calibration` mode, and `manual` mode). For more details about the existing modes of operation in the AWS DeepRacer device, see  [Modes of operation](https://github.com/aws-deepracer/aws-deepracer-launcher/blob/main/modes-of-operation.md).
 
-In `ftl` mode, the AWS DeepRacer device takes the camera image input from the front-facing camera connected to the car and runs it through the machine learning model to identify a person, calculate information required to plan its action, and follow the person. Similar to `autonomous` mode, `ftl` mode has a perception-inference-action step, in which an object-detection model does the inference to obtain the bounding box data for a person identified in the image. Each perception-inference-action step involves a pipeline of a series of ROS messages published and subscribed at various nodes to publish the camera image, and then to publish the object detection deltas identifying the person’s position and corresponding action data to follow the person.
+In `followtheleader` mode, the AWS DeepRacer device takes the camera image input from the front-facing camera connected to the car and runs it through the machine learning model to identify a person, calculate information required to plan its action, and follow the person. Similar to `autonomous` mode, `ftl` mode has a perception-inference-action step, in which an object-detection model does the inference to obtain the bounding box data for a person identified in the image. Each perception-inference-action step involves a pipeline of a series of ROS messages published and subscribed at various nodes to publish the camera image, and then to publish the object detection deltas identifying the person’s position and corresponding action data to follow the person.
 
 ![ftl-flow](/media/ftl-flow.png)
 
@@ -63,7 +65,9 @@ The object detection ROS package handles the inference step, creating the `objec
 
 For each input image, the node detects an object or person, gets the coordinates of the center of the bounding box, and calculates the (x, y) delta of the [current position of detected object - target position]. The delta is calculated as shown in the following figure:
 
-![ftl-object-detection-bb](/media/ftl-object-detection-bb.png)
+<p align="center">
+<img src="/media/ftl-object-detection-bb.png" height="450" >
+</p>
 
 This delta value is published as the `DetectionDeltaMsg` data to the `/object_detection_pkg/object_detection_delta` topic, which the FTL navigation node reads. If no object is detected in a image, the `object_detection_node` publishes a zero error (delta), signifying that the AWS DeepRacer is already at the target position and need not move.
 
@@ -72,7 +76,9 @@ This delta value is published as the `DetectionDeltaMsg` data to the `/object_de
 
 The FTL navigation ROS package creates the `ftl_navigation_node`, which decides the action or controller message to send out based on the normalized detection error (delta) received from the `object_detection_node`. The node uses a very simple action space to account for the various combinations of the expected (`x`, `y`) delta values.
 
-![ftl-navigation-moves](/media/ftl-navigation-moves.png)
+<p align="center">
+<img src="/media/ftl-navigation-moves.png" height="450" >
+</p>
 
 In the preceding diagram, there are 9 different cases to handle with respect to the {delta_x, delta_y} values. These {delta_x, delta_y} values define the difference in the target position to the center of the bounding box in the current image that was run through object detection. We have defined the following simple action space to handle these 9 cases:
 
@@ -90,11 +96,16 @@ In the preceding diagram, there are 9 different cases to handle with respect to 
 
 It is important to map specific thresholds for the {delta_x, delta_y} values to the actions defined above in order to ensure a safe and meaningful selection of actions. These actual delta values to trigger each of the actions from the preceding action space are defined by empirically collecting the {delta_x, delta_y} value of the object (person standing in front of camera) at different positions with respect to the camera of the AWS DeepRacer device. The following grid diagram shows a top-down view of the placement positions with the car with camera placed at the bottom.
 
-![ftl-detection-delta-calculation-experiment-placement](/media/ftl-detection-delta-calculation-experiment-placement.png)
+<p align="center">
+<img src="/media/ftl-detection-delta-calculation-experiment-placement.png" height="450" >
+</p>
+
 
 The following image shows the average of the changes in `x` and `y` (`delta_x` and `delta_y`) for over 3 x 20 incidents for each position. These {delta_x, delta_y} values, with respect to the object (person) position from the camera, enable us to create a safe distance bracket for valid actions. These brackets are then mapped to the steering and the speed values required by the AWS DeepRacer `servo_node`.
 
-![ftl-detection-delta-calculation-experiment-results](/media/ftl-detection-delta-calculation-experiment-results.png)
+<p align="center">
+<img src="/media/ftl-detection-delta-calculation-experiment-results.png" height="450" >
+</p>
 
 Based on the data collected, we get the following brackets:
 
@@ -112,14 +123,16 @@ Based on the data collected, we get the following brackets:
 * FORWARD
 * REVERSE
 
-For every combination of the normalized delta combination in `x` and `y` (`delta_x` and `delta_y`), based on the preceding brackets of actions for steering and throttle, the `ftl_navigation_node` plans and publishes an action for the `servo_node` to pick up when `ftl` mode is enabled.
+For every combination of the normalized delta combination in `x` and `y` (`delta_x` and `delta_y`), based on the preceding brackets of actions for steering and throttle, the `ftl_navigation_node` plans and publishes an action for the `servo_node` to pick up when `followtheleader` mode is enabled.
 
 Using this pipeline for perception-inference-action on a loop, the AWS DeepRacer detects a person, plans what action is needed to bring the person to the target position, and takes the action for each image on which it infers, thus achieving the goal of following a person.
 
 
 ## Demo
 
-![ftl-demo](/media/ftl-demo.gif)
+<p align="center">
+<img src="/media/ftl-demo.gif" height="450" >
+</p>
 
 
 ## Possible next steps

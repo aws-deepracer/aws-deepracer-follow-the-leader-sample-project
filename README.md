@@ -350,7 +350,9 @@ The `ftl_launcher.py` included in this package is the main launcher file that la
 
 ## Demo
 
-![ftl-demo](/media/ftl-demo.gif)
+<p align="center">
+<img src="/media/ftl-demo.gif" height="350" >
+</p>
 
 
 ## Resources
