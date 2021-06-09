@@ -1,12 +1,12 @@
-# Download and convert object detection model
+# Download and convert the object-detection model
 
-The Follow the Leader (FTL) sample project is an sample application built on top of the existing AWS DeepRacer application, which uses an object-detection machine learning model through which the AWS DeepRacer device can identify and follow a person. For more details about the Follow the Leader sample project, see the [AWS DeepRacer Follow the Leader (FTL) sample project](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project).
+The Follow the Leader (FTL) sample project is an sample application built on top of the existing AWS DeepRacer application, which uses an object-detection machine learning model through which the AWS DeepRacer device can identify and follow a person. For more details about the FTL sample project, see the [AWS DeepRacer Follow the Leader (FTL) sample project](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project).
 
-The Follow the Leader (FTL) sample project uses a sample open source object-detection model suited to run high performance inference with minimum latency on the AWS DeepRacer device. The Follow the Leader (FTL) sample project is designed to make it easy to replace this model with any other custom model and run the inference on it. We have tested the object detection using the Intel OpenVino Optimized [ssd_mobilenet_v2_coco](https://docs.openvinotoolkit.org/latest/omz_models_public_ssd_mobilenet_v2_coco_ssd_mobilenet_v2_coco.html) object detection model built on the [Single-Shot multibox Detection (SSD)](https://arxiv.org/abs/1801.04381) network as the default model.
+The FTL sample project uses a sample open-source object-detection model suited to run high-performance inference with minimum latency on the AWS DeepRacer device. The FTL sample project is designed to make it easy to replace this model with any other custom model and run the inference on it. We have tested the object detection using the Intel OpenVino Optimized [ssd_mobilenet_v2_coco](https://docs.openvinotoolkit.org/latest/omz_models_public_ssd_mobilenet_v2_coco_ssd_mobilenet_v2_coco.html) object-detection model built on the [Single-Shot multibox Detection (SSD)](https://arxiv.org/abs/1801.04381) network as the default model.
 
 ## Download the model
 
-As a prerequisite to using the Follow the Leader (FTL) sample project, open a terminal and run the following instructions as a root user on the AWS DeepRacer device to download the [ssd_mobilenet_v2_coco](https://docs.openvinotoolkit.org/latest/omz_models_public_ssd_mobilenet_v2_coco_ssd_mobilenet_v2_coco.html) object detection model:
+As a prerequisite to using the FTL sample project, open a terminal and run the following instructions as the root user on the AWS DeepRacer device to download the [ssd_mobilenet_v2_coco](https://docs.openvinotoolkit.org/latest/omz_models_public_ssd_mobilenet_v2_coco_ssd_mobilenet_v2_coco.html) object detection model:
 
 - Create a model directory:
 
@@ -27,9 +27,9 @@ As a prerequisite to using the Follow the Leader (FTL) sample project, open a te
 
 ## Optimize the model
 
-Run Intel Model Optimizer to optimize the [ssd_mobilenet_v2_coco](https://docs.openvinotoolkit.org/latest/omz_models_public_ssd_mobilenet_v2_coco_ssd_mobilenet_v2_coco.html) object detection model and convert it into OpenVino Intermediate Representation. For more information about converting a Tensorflow model to OpenVINO optimized format, see [Converting a TensorFlow Model](https://docs.openvinotoolkit.org/2021.1/openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_TensorFlow.html).
+Run Intel Model Optimizer to optimize the [ssd_mobilenet_v2_coco](https://docs.openvinotoolkit.org/latest/omz_models_public_ssd_mobilenet_v2_coco_ssd_mobilenet_v2_coco.html) object-detection model and convert it into OpenVino Intermediate Representation. For more information about converting a Tensorflow model to OpenVINO optimized format, see [Converting a TensorFlow Model](https://docs.openvinotoolkit.org/2021.1/openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_TensorFlow.html).
 
-To optimize the model, open a terminal and run the following instructions as a root user on the AWS DeepRacer device:
+To optimize the model, open a terminal and run the following instructions as the root user on the AWS DeepRacer device:
 
 - Navigate to the Intel OpenVino Model Optimizer installation directory:
 
@@ -81,8 +81,8 @@ To optimize the model, open a terminal and run the following instructions as a r
 
 ## Copy the optimized artifacts to the model location
 
-The Follow the Leader (FTL) sample project expects the optimized model to be present in the `/opt/models` folder. Copy the optimized frozen inference graph model files to `/opt/models`.
+The FTL sample project expects the optimized model to be present in the `/opt/models` folder. Copy the optimized frozen inference graph model files to `/opt/models`.
 
         cp frozen_inference_graph.* /opt/models
 
-For detailed information on the Follow the Leader (FTL) sample project, see the [Getting started](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/getting-started.md) section.
+For detailed information on the FTL sample project, see the [Getting started](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project/blob/main/getting-started.md) section.

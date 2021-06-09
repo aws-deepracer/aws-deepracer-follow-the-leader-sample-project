@@ -2,7 +2,7 @@
 
 ## Overview
 
-The object detection ROS package creates the `object_detection_node`, which is responsible for collecting sensor data (camera images) from `sensor_fusion_pkg` and running them through the object-detection model to find a specified object and provide a normalized delta of the found object from the target position. This delta value is published using a ROS publisher as `DetectionDeltaMsg` data. For more information about the Follow the Leader (FTL) sample project, see the [Follow the Leader(FTL) sample project](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project).
+The object detection ROS package creates the `object_detection_node`, which is responsible for collecting sensor data (camera images) from `sensor_fusion_pkg` and running them through the object-detection model to find a specified object and provide a normalized delta of the found object from the target position. This delta value is published using a ROS publisher as `DetectionDeltaMsg` data. For more information, see the [AWS DeepRacer Follow the Leader(FTL) sample project](https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project).
 
 ## License
 
@@ -10,15 +10,15 @@ The source code is released under [Apache 2.0](https://aws.amazon.com/apache-2-0
 
 ## Installation
 
-Follow this procedure for installation.
+Follow these steps to install the AWS DeepRacer object detection package.
 
 ### Prerequisites
 
-The AWS DeepRacer device comes with all the prerequisite packages and libraries installed to run the Follow the Leader (FTL) sample project. For more details about the preinstalled set of packages and libraries on the DeepRacer device, and for instructions for installing the required build systems, see [Getting Started with DeepRacer OpenSource](https://github.com/aws-deepracer/aws-deepracer-launcher/blob/main/getting-started.md). 
+The AWS DeepRacer device comes with all the prerequisite packages and libraries installed to run the FTL sample project. For more information about the preinstalled set of packages and libraries on the AWS DeepRacer device, and about installing the required build systems, see [Getting started with AWS DeepRacer OpenSource](https://github.com/aws-deepracer/aws-deepracer-launcher/blob/main/getting-started.md). 
 
-The `object_detection_pkg` specifically depends on the following ROS2 packages as build and execute dependencies:
+The `object_detection_pkg` specifically depends on the following ROS 2 packages as build and run dependencies.
 
-1. *deepracer_interfaces_pkg*: This package contains the custom message and service type definitions used across the AWS DeepRacer core application, modified to support Follow the Leader (FTL) sample project.
+1. `deepracer_interfaces_pkg`: This package contains the custom message and service type definitions used across the AWS DeepRacer core application, modified to support FTL sample project.
 
 The following are the additional software and hardware requirements to get the `object_detection_node` to work on the AWS DeepRacer device. 
 
@@ -26,7 +26,7 @@ The following are the additional software and hardware requirements to get the `
 
 1. **Set up the Intel Neural Compute Stick 2 (optional):** The `object_detection_node` provides functionality to offload the inference to a Intel Neural Compute Stick 2 connected to the AWS DeepRacer device. This is an optional setting that enhances the inference performance of the object-detection model. For more details about running inference on the Movidius NCS (Neural Compute Stick) with OpenVINO™ toolkit, see [this video](https://www.youtube.com/watch?v=XPvMrGobe7I).
 
-Attach the Neural Compute Stick 2 firmly in the back slot of the AWS DeepRacer, open a terminal, and run the following commands as the root user to install the dependencies of the Intel Neural Compute Stick 2 on the AWS DeepRacer device:
+Attach the Neural Compute Stick 2 firmly in the back slot of the AWS DeepRacer, open a terminal, and run the following commands as the root user to install the dependencies of the Intel Neural Compute Stick 2 on the AWS DeepRacer device.
 
 1. Switch to the root user:
 
@@ -46,13 +46,13 @@ Attach the Neural Compute Stick 2 firmly in the back slot of the AWS DeepRacer, 
 
 ## Downloading and building
 
-Open a terminal on the DeepRacer device and run the following commands as the root user.
+Open a terminal on the AWS DeepRacer device and run the following commands as the root user.
 
-1. Switch to the root user before you source the ROS2 installation:
+1. Switch to the root user before you source the ROS 2 installation:
 
         sudo su
 
-1. Source the ROS2 Foxy setup bash script:
+1. Source the ROS 2 Foxy setup bash script:
 
         source /opt/ros/foxy/setup.bash 
 
@@ -65,7 +65,7 @@ Open a terminal on the DeepRacer device and run the following commands as the ro
         mkdir -p ~/deepracer_ws
         cd ~/deepracer_ws
 
-1. Clone the entire Follow the Leader (FTL) sample project on the DeepRacer device:
+1. Clone the entire FTL sample project on the DeepRacer device:
 
         git clone https://github.com/aws-deepracer/aws-deepracer-follow-the-leader-sample-project.git
         cd ~/deepracer_ws/aws-deepracer-follow-the-leader-sample-project/deepracer_follow_the_leader_ws/
@@ -87,21 +87,21 @@ Open a terminal on the DeepRacer device and run the following commands as the ro
 
 ## Using the `object_detection_node`
 
-Although the **object_detection_node** is built to work with the Follow the Leader (FTL) sample project, it can be run independently for development, testing, and debugging purposes.
+Although the **object_detection_node** is built to work with the FTL sample project, you can run it independently for development, testing, and debugging purposes.
 
 ### Running the node
 
-Configure the launch file to specify which device to use for inference (for more details, see the extended configuration section below). To launch the built `object_detection_node` as the root user on the AWS DeepRacer device, open another terminal on the device and run the following commands as the root user:
+Configure the launch file to specify which device to use for inference (for more details, see the extended configuration section below). To launch the built `object_detection_node` as the root user on the AWS DeepRacer device, open another terminal on the device and run the following commands as the root user.
 
-1. Switch to the root user before you source the ROS2 installation:
+1. Switch to the root user before you source the ROS 2 installation:
 
         sudo su
 
-1. Navigate to the Follow the Leader (FTL) workspace:
+1. Navigate to the FTL workspace:
 
         cd ~/deepracer_ws/aws-deepracer-follow-the-leader-sample-project/deepracer_follow_the_leader_ws/
 
-1. Source the ROS2 Foxy setup bash and OpenVINO bash script:
+1. Source the ROS 2 Foxy setup bash and OpenVINO bash script:
 
         source /opt/ros/foxy/setup.bash 
         source /opt/intel/openvino_2021/bin/setupvars.sh 
@@ -139,28 +139,28 @@ A launch file called `object_detection_pkg_launch.py` is included in this packag
 
 #### `object_detection_node`
 
-| Parameter Name   | Description  |
+| Parameter name   | Description  |
 | ---------------- |  ----------- |
-| `DEVICE` (optional) | If set as `MYRIAD`, it uses the Intel Compute Stick 2 for inference. Else, uses CPU for inference by default, even if removed. |
+| `DEVICE` (optional) | If set as `MYRIAD`, it uses the Intel Compute Stick 2 for inference. Otherwise, it uses CPU for inference by default, even if removed. |
 | `PUBLISH_DISPLAY_OUTPUT` | Set to `True` or `False` if the inference output images need to be published to localhost using `web_video_server`.|
 
 
-## Node Details
+## Node details
 
 ### `object_detection_node`
 
 #### Subscribed topics
 
-| Topic Name | Message Type | Description |
+| Topic name | Message type | Description |
 |----------- | ------------ | ----------- |
 | `/sensor_fusion_pkg/sensor_msg` | `EvoSensorMsg` | This message holds a list of `sensor_msgs` and image objects that are independently collected from different camera sensors. |
 
 
-#### Published Topics
+#### Published topics
 
-| Topic Name | Message Type | Description |
+| Topic name | Message type | Description |
 |----------- | ------------ | ----------- |
-| `object_detection_delta` | `DetectionDeltaMsg` | Message with object detection normalized error (delta) of the detected object from the target (reference) position with respect to x and y axes. |
+| `object_detection_delta` | `DetectionDeltaMsg` | Message with object detection normalized error (delta) of the detected object from the target (reference) position with respect to `x` and `y` axes. |
 | `detection_display` | Image | Message to display the input stream of images after inference, published to the `local web_video_server`. |
 
 ## Resources
