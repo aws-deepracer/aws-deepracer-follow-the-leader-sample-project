@@ -117,6 +117,8 @@ To launch the FTL sample application as the root user on the AWS DeepRacer devic
 
         ros2 launch ftl_launcher ftl_launcher.py
 
+Once the FTL sample application is launched, you can follow the steps [here](https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-set-up-vehicle-test-drive.html) to open the AWS DeepRacer Vehicle's Device Console and checkout the FTL mode tab which will help you control the vehicle.
+
 ### Enabling `followtheleader` mode using the CLI
 
 Once the `ftl_launcher` has been kicked off, open a new terminal as the root user.
@@ -203,7 +205,10 @@ The `ftl_launcher.py`, included in this package, is the main launcher file that 
                 package='camera_pkg',
                 namespace='camera_pkg',
                 executable='camera_node',
-                name='camera_node'
+                name='camera_node',
+                parameters=[
+                    {'resize_images': False}
+                ]
             )
             ctrl_node = Node(
                 package='ctrl_pkg',
@@ -343,6 +348,8 @@ The `ftl_launcher.py`, included in this package, is the main launcher file that 
 | ---------------- |  ----------- |
 | `DEVICE` (optional) | If set as `MYRIAD`, uses the Intel Compute Stick 2 for inference. Else, uses the CPU for inference by default, even if it is removed. |
 | `PUBLISH_DISPLAY_OUTPUT` | Set to `True` or `False` if the inference output images need to be published to localhost using `web_video_server`.|
+| `resize_images` | Set to `True` or `False` depending on if you want to resize the images in camera_pkg |
+
 
 ## Resources
 

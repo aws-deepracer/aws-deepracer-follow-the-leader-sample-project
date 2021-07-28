@@ -121,6 +121,8 @@ To launch the FTL sample application as the root user on the AWS DeepRacer devic
 
         ros2 launch ftl_launcher ftl_launcher.py
 
+Once the FTL sample application is launched, you can follow the steps [here](https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-set-up-vehicle-test-drive.html) to open the AWS DeepRacer Vehicle's Device Console and checkout the FTL mode tab which will help you control the vehicle.
+
 ### Enabling `followtheleader` mode using the CLI
 
 Once the `ftl_launcher` has been kicked off, open a new terminal as the root user.
@@ -180,7 +182,7 @@ You can modify the `MAX_SPEED` scale of the AWS DeepRacer using an ROS 2 service
 
 ## Launch files
 
-The `ftl_launcher.py` included in this package is the main launcher file that launches all the required nodes for the FTL sample project. This launcher file also includes the nodes from the AWS DeepRacer core application.
+The `ftl_launcher.py`, included in this package, is the main launcher file that launches all the required nodes for the FTL sample project. This launcher file also includes the nodes from the AWS DeepRacer core application.
 
         from launch import LaunchDescription
         from launch_ros.actions import Node
@@ -207,7 +209,10 @@ The `ftl_launcher.py` included in this package is the main launcher file that la
                 package='camera_pkg',
                 namespace='camera_pkg',
                 executable='camera_node',
-                name='camera_node'
+                name='camera_node',
+                parameters=[
+                    {'resize_images': False}
+                ]
             )
             ctrl_node = Node(
                 package='ctrl_pkg',
@@ -340,12 +345,14 @@ The `ftl_launcher.py` included in this package is the main launcher file that la
             ld.add_action(web_video_server_node)
             return ld
 
+
 ### Configuration file and parameters
 
-| Parameter Name   | Description  |
+| Parameter name   | Description  |
 | ---------------- |  ----------- |
-| `DEVICE` (optional) | If set as `MYRIAD`, it uses the Intel Compute Stick 2 for inference. Otherwise, it uses the CPU for inference by default, even if it is removed. |
+| `DEVICE` (optional) | If set as `MYRIAD`, uses the Intel Compute Stick 2 for inference. Else, uses the CPU for inference by default, even if it is removed. |
 | `PUBLISH_DISPLAY_OUTPUT` | Set to `True` or `False` if the inference output images need to be published to localhost using `web_video_server`.|
+| `resize_images` | Set to `True` or `False` depending on if you want to resize the images in camera_pkg |
 
 
 ## Demo
