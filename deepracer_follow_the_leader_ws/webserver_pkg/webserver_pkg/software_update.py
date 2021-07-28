@@ -184,31 +184,6 @@ def get_software_update_status():
                 percentage_completion = pct_dict["update_pct"]
                 result = f"status:{pct_dict['status']}|update_pct:{percentage_completion}"
                 yield "data: %s %d\n\n" % (result, i)
-                if(percentage_completion == 100):
-                    webserver_node.get_logger().info("software update event source result: "
-                                                     f"{result}")
-                    request = True
-                    sw_update_status_req = SoftwareUpdateStateSrv.Request()
-                    sw_update_status_req.request = request
-                    sw_update_status_res = call_service_sync(webserver_node.sw_update_status_cli,
-                                                             sw_update_status_req)
-                    if sw_update_status_res:
-                        # Check if software update state is set.
-                        if sw_update_status_res.update_state == 0:
-                            # Write to software udpate status as atleast one
-                            # update has completed successfully.
-                            with open(SOFTWARE_UPDATE_STATUS_PATH, "w") \
-                             as software_update_status_file:
-                                software_update_status = {"update_completed": True}
-                                json.dump(software_update_status, software_update_status_file)
-
-                            break
-                    else:
-                        webserver_node.get_logger().error("Unable to reach update status service: "
-                                                          f"{sw_update_status_res}")
-                        result = "status:complete|update_pct:100"
-                        yield f"data: {result} {1}\n\n"
-
                 # The sleep is introduced here so as to fetch the next message from
                 # the software_update_status service. This is rate at which the UI shows
                 # the change in the status querying the service. So this will provide us
